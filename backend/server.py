@@ -646,6 +646,7 @@ async def get_document(
 
 # Include router
 app.include_router(api_router)
+app.include_router(fire_router, prefix="/api")
 
 # CORS middleware
 app.add_middleware(
