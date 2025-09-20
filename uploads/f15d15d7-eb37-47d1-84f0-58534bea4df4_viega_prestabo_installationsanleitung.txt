@@ -1,0 +1,298 @@
+VIEGA PRESTABO ROHRLEITUNGSSYSTEM
+Installationsanleitung für Edelstahl-Pressfittings
+
+Version 3.2 DE | Januar 2024
+Viega GmbH & Co. KG, Attendorn
+
+INHALTSVERZEICHNIS
+
+1. PRODUKTÜBERSICHT UND ANWENDUNGSBEREICHE
+2. SICHERHEITSHINWEISE
+3. SYSTEMKOMPONENTEN UND WERKSTOFFE
+4. WERKZEUGE UND HILFSMITTEL
+5. INSTALLATIONSANLEITUNG
+6. QUALITÄTSKONTROLLE UND DRUCKPRÜFUNG
+7. WARTUNG UND INSTANDHALTUNG
+8. TECHNISCHE DATEN UND SPEZIFIKATIONEN
+9. NORMEN UND ZULASSUNGEN
+
+1. PRODUKTÜBERSICHT UND ANWENDUNGSBEREICHE
+
+1.1 Systemübersicht
+Das Viega Prestabo System ist ein innovatives Rohrleitungssystem aus rostfreiem Edelstahl 1.4401 (316) für Trinkwasser-, Heizungs- und Kühlanlagen. Das System basiert auf der bewährten Presstechnik mit Doppel-Presskontur für maximale Betriebssicherheit.
+
+1.2 Anwendungsbereiche
+- Trinkwasserinstallation nach DIN EN 806
+- Heizungsanlagen nach DIN EN 12828
+- Kühlanlagen und Klimatechnik
+- Industrielle Rohrleitungsanlagen
+- Renovierung und Sanierung
+
+1.3 Systemvorteile
+- Keine Korrosion durch Edelstahl 1.4401
+- Schnelle und sichere Installation
+- Smart Connect Technologie zur Leckageprävention
+- Geringer Druckverlust durch glatte Innenoberflächen
+- Temperaturbeständigkeit bis 120°C
+- Druckbeständigkeit bis 16 bar
+
+2. SICHERHEITSHINWEISE
+
+WARNUNG: Installation nur durch qualifiziertes Fachpersonal!
+
+2.1 Allgemeine Sicherheitshinweise
+- Vor Arbeitsbeginn alle relevanten Normen und Vorschriften beachten
+- Persönliche Schutzausrüstung verwenden
+- Rohrleitungen vor Arbeiten drucklos machen
+- Geeignetes Werkzeug verwenden
+- Regelmäßige Sichtkontrollen durchführen
+
+2.2 Arbeitsschutz
+- Schutzbrille bei Rohrbearbeitung tragen
+- Handschuhe bei Umgang mit scharfkantigen Rohren
+- Gehörschutz bei maschineller Rohrbearbeitung
+- Erste-Hilfe-Maßnahmen bei Verletzungen kennen
+
+2.3 Betriebsparameter beachten
+- Maximale Betriebstemperatur: 120°C
+- Maximaler Betriebsdruck: 16 bar
+- pH-Wert des Mediums: 6,5 - 9,5
+- Chloridgehalt max. 200 mg/l
+
+3. SYSTEMKOMPONENTEN UND WERKSTOFFE
+
+3.1 Rohre
+Material: Edelstahl 1.4401 (316)
+Ausführung: Nahtlose Rohre nach DIN EN 10312
+Nennweiten: 12, 15, 18, 22, 28, 35, 42, 54, 76.1, 88.9, 108 mm
+Wanddicken: Nach DIN EN 10312, Serie 1 und 2
+
+3.2 Pressfittings
+Material: Edelstahl 1.4401 (316) / Bronze CW602N
+Dichtung: EPDM, trinkwasserzugelassen
+Betriebstemperatur: -10°C bis +120°C
+Betriebsdruck: max. 16 bar (bei 20°C)
+
+3.3 Smart Connect Technologie
+Unpresste Verbindungen werden durch grüne O-Ringe erkennbar gemacht:
+- Bei Druckprüfung mit Wasser: Leckage an ungepreßten Stellen
+- Sofortige Erkennung von Montagefehlern
+- Höhere Betriebssicherheit
+
+4. WERKZEUGE UND HILFSMITTEL
+
+4.1 Pressworkzeuge
+Zugelassene Presswerkzeuge:
+- Viega Pressgun 5
+- Viega Pressgun 6
+- Rems Power-Press ACC
+- Rothenberger Romax 4000
+- Ridgid RP 340
+
+4.2 Pressbacken
+Pressbacken für Prestabo System:
+- Größe 12-35 mm: V-Kontur Pressbacken
+- Größe 42-108 mm: TH-Kontur Pressbacken
+- Kennzeichnung: "Viega" oder "TH" Prägung erforderlich
+
+4.3 Zusätzliche Werkzeuge
+- Rohrabschneider oder Säge
+- Entgratungswerkzeug
+- Rohrbieger für kleine Nennweiten
+- Meßwerkzeuge (Maßband, Wasserwaage)
+- Prüfpumpe für Druckprüfung
+
+5. INSTALLATIONSANLEITUNG
+
+5.1 Rohrbearbeitung
+1. Rohr rechtwinklig ablängen
+   - Rohrabschneider oder feine Säge verwenden
+   - Schnittfläche muss rechtwinklig sein
+   - Toleranz: ±2°
+
+2. Rohrendenbearbeitung
+   - Innen- und Außengrat vollständig entfernen
+   - Rohrende darf nicht oval verformt sein
+   - Rundheit prüfen
+
+3. Rohrreinigung
+   - Rohrendenstück reinigen und entfetten
+   - Keine scharfen Reinigungsmittel verwenden
+   - Mit fusselfreiem Tuch abwischen
+
+5.2 Fitting-Vorbereitung
+1. Fitting und Dichtring auf Beschädigungen prüfen
+2. Dichtring auf korrekte Lage kontrollieren
+3. Fitting-Innenbereich reinigen
+4. Gewinde bei Übergangsfittings prüfen
+
+5.3 Pressvorgang
+1. Rohr bis zum Anschlag in Fitting einführen
+   - Einstecktiefe gemäß Tabelle beachten
+   - Gleichmäßig einführen, nicht verkanten
+   - Markierung am Rohr zur Kontrolle anbringen
+
+2. Pressbacken richtig positionieren
+   - Passende Pressbackengröße wählen
+   - Pressbacken mittig am Pressfitting ansetzen
+   - Pressbacken vollständig schließen
+
+3. Pressvorgang durchführen
+   - Presswerkzeug bis zum Anschlag betätigen
+   - Automatische Druckabschaltung abwarten
+   - Pressvorgang darf nicht unterbrochen werden
+
+4. Presskontrolle
+   - Sichtprüfung der Presskontur
+   - Gleichmäßige Pressverformung prüfen
+   - Beschädigungen ausschließen
+
+5.4 Einstecktiefen und Pressmaße
+
+| Nennweite | Einstecktiefe | Pressmaß | Art.-Nr. Beispiel |
+|-----------|---------------|----------|-------------------|
+| 12 mm     | 14,5 mm       | 15,8 mm  | 2215.1           |
+| 15 mm     | 16,5 mm       | 18,0 mm  | 2215.2           |
+| 18 mm     | 18,0 mm       | 20,2 mm  | 2215.3           |
+| 22 mm     | 19,5 mm       | 23,4 mm  | 2215.4           |
+| 28 mm     | 21,5 mm       | 30,0 mm  | 2215.5           |
+| 35 mm     | 24,0 mm       | 37,2 mm  | 2215.6           |
+| 42 mm     | 26,5 mm       | 44,8 mm  | 2215.7           |
+| 54 mm     | 29,0 mm       | 57,4 mm  | 2215.8           |
+
+5.5 Besondere Installationshinweise
+1. Rohrleitungsführung
+   - Ausdehnungsausgleich vorsehen
+   - Rohrschellen in angemessenen Abständen
+   - Steigungsgefälle bei Drainageleitungen beachten
+
+2. Isolierung
+   - Isolation nach EnEV durchführen
+   - Dampfsperre bei Kälteanlagen
+   - Brandschutzisolierung nach DIN 4102
+
+3. Absperrungen und Entleerung
+   - Absperrventile an kritischen Stellen
+   - Entleerungsmöglichkeiten vorsehen
+   - Rückflußverhinderer einbauen
+
+6. QUALITÄTSKONTROLLE UND DRUCKPRÜFUNG
+
+6.1 Sichtprüfung
+Vor Druckprüfung durchführen:
+- Vollständigkeit aller Pressungen prüfen
+- Smart Connect Ringe kontrollieren (grün = ungepresst)
+- Mechanische Beschädigungen ausschließen
+- Befestigung und Lagerung prüfen
+
+6.2 Druckprüfung nach DIN EN 806-4
+1. Vorprüfung mit Luft
+   - Prüfdruck: 150 mbar
+   - Prüfdauer: 120 Sekunden
+   - Druckabfall max. 10 mbar
+
+2. Hauptprüfung mit Wasser
+   - Prüfdruck: 1,5 x Betriebsdruck, mind. 6 bar
+   - Prüfdauer: 30 Minuten
+   - Kein Druckabfall zulässig
+   - Sichtprüfung auf Leckagen
+
+6.3 Belastungsprüfung
+Nach der Hauptprüfung:
+- Prüfdruck: 10 bar
+- Prüfdauer: 120 Minuten  
+- Druckabfall max. 0,2 bar
+- Protokollierung erforderlich
+
+6.4 Fehlersuche bei Undichtigkeiten
+Häufige Ursachen:
+- Ungepreßte Verbindungen (Smart Connect zeigt grünen Ring)
+- Unvollständige Pressung (Presskontur prüfen)
+- Beschädigte Dichtungen
+- Falsche Pressbacken verwendet
+
+7. WARTUNG UND INSTANDHALTUNG
+
+7.1 Wartungsintervalle
+- Sichtprüfung: jährlich
+- Funktionsprüfung: alle 2 Jahre
+- Vollinspektion: alle 5 Jahre
+- Nach Reparaturen: Druckprüfung erforderlich
+
+7.2 Wartungsmaßnahmen
+Regelmäßige Kontrolle:
+- Rohrschellen und Befestigungen
+- Isolierung auf Beschädigungen
+- Absperrventile auf Gängigkeit
+- Entleerungsventile auf Funktion
+
+7.3 Instandsetzung
+Bei Reparaturen:
+- System drucklos machen
+- Betroffenen Bereich entleeren
+- Reparatur mit Original-Systemteilen
+- Druckprüfung nach Reparatur
+
+8. TECHNISCHE DATEN UND SPEZIFIKATIONEN
+
+8.1 Betriebsparameter
+- Maximaler Betriebsdruck: 16 bar (bei 20°C)
+- Maximale Betriebstemperatur: 120°C
+- Minimale Betriebstemperatur: -10°C
+- Prüfdruck: 24 bar (1,5 x Betriebsdruck)
+
+8.2 Werkstoffe
+Rohre: Edelstahl 1.4401 (X5CrNiMo17-12-2)
+- Zugfestigkeit: 520-670 N/mm²
+- Streckgrenze: min. 220 N/mm²
+- Bruchdehnung: min. 40%
+
+Fittings: Edelstahl 1.4401 / Bronze CW602N
+Dichtungen: EPDM nach DIN EN 549
+- Shore-Härte: 70 ±5 Shore A
+- Temperaturbeständigkeit: -40°C bis +150°C
+
+8.3 Druckverluste
+Druckverluste bei verschiedenen Durchflüssen:
+
+| DN | 1 m/s | 2 m/s | 3 m/s |
+|----|-------|-------|-------|
+| 15 | 2,8 mbar/m | 10,1 mbar/m | 21,8 mbar/m |
+| 22 | 1,4 mbar/m | 5,1 mbar/m | 11,1 mbar/m |
+| 28 | 0,9 mbar/m | 3,3 mbar/m | 7,2 mbar/m |
+| 35 | 0,6 mbar/m | 2,1 mbar/m | 4,6 mbar/m |
+
+9. NORMEN UND ZULASSUNGEN
+
+9.1 Anwendbare Normen
+- DIN EN 806: Technische Regeln für Trinkwasser-Installationen
+- DIN EN 12828: Heizungsanlagen - Planung von Warmwasser-Heizungsanlagen
+- DIN EN 10312: Nahtlose Edelstahlrohre für Druckanwendungen
+- DVGW W 534: Verwendung von Werkstoffen für Trinkwasser-Installationen
+
+9.2 Zulassungen und Zertifikate
+- DVGW-Zertifikat: DW-8006BQ0318
+- KTW-Empfehlung nach DVGW W 270
+- KIWA-Zertifikat: BRL-K504/05
+- WRAS-Zulassung: 1712-02/4-1
+- NSF International: NSF/ANSI 61
+
+9.3 Qualitätssicherung
+- Werkseigene Produktionskontrolle nach DIN EN ISO 9001
+- Regelmäßige Fremdüberwachung
+- Chargenrückverfolgbarkeit aller Komponenten
+- Umweltmanagement nach DIN EN ISO 14001
+
+VIEGA GmbH & Co. KG
+Ennepetal Werk
+Attendorn Werk
+57439 Attendorn
+Deutschland
+
+Kundenservice: 0800 8434 000
+Technische Hotline: 02722 61-1430
+www.viega.de
+technik@viega.de
+
+© 2024 Viega. Alle Rechte vorbehalten.
+Technische Änderungen vorbehalten.
