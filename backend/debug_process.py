@@ -94,6 +94,9 @@ async def debug_process_single_document():
                     print(f"     Content hash: {content_hash[:8]}...")
                     print(f"     Embedding length: {len(embeddings[i])}")
                     
+                    # Convert embedding list to PostgreSQL vector format
+                    embedding_str = '[' + ','.join(map(str, embeddings[i])) + ']'
+                    
                     await db.execute('''
                         INSERT INTO document_sections (
                             id, document_id, anchor_id, title, content, page_number,
@@ -101,7 +104,7 @@ async def debug_process_single_document():
                         ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
                     ''', section_id, doc_id, anchor_id, section['title'], section['content'],
                          section['page_number'], section['section_hierarchy'], content_hash,
-                         embeddings[i])
+                         embedding_str)
                     
                     sections_saved += 1
                     print(f"     ✅ Section {i+1} saved successfully")
