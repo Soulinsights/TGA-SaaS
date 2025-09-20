@@ -9,6 +9,7 @@ const Navigation = ({ currentProject }) => {
     { path: '/', label: 'Startseite', icon: Database },
     { path: '/search', label: 'Suche', icon: Search },
     { path: '/qa', label: 'Q&A Chat', icon: MessageCircle },
+    { path: '/clearance', label: 'Brandschutz', icon: Calculator },
     { path: '/upload', label: 'Upload', icon: Upload },
     { path: '/projects', label: 'Projekte', icon: Building }
   ];
