@@ -235,7 +235,7 @@ async def get_embeddings(texts: List[str]) -> List[List[float]]:
         return embeddings
     except Exception as e:
         logger.error(f"Error generating embeddings: {e}")
-        return [[0.0] * 3072 for _ in texts]
+        return [[0.0] * 1536 for _ in texts]
 
 async def generate_rag_response(question: str, context_sections: List[Dict]) -> Dict:
     """Generate RAG response with citations"""
