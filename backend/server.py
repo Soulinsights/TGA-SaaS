@@ -345,6 +345,69 @@ def extract_text_from_pdf(file_content: bytes) -> List[Dict]:
         logger.error(f"PDF extraction error: {e}")
         return []
 
+def extract_text_from_txt(file_content: bytes, filename: str = "") -> List[Dict]:
+    """Extract text from plain text files and create logical sections"""
+    try:
+        # Decode text content
+        text = file_content.decode('utf-8')
+        
+        # Split by major sections (look for numbered headings, double newlines, etc.)
+        sections = []
+        
+        # Split by major headings (1., 2., 3., etc.) or double newlines
+        lines = text.split('\n')
+        current_section = {'title': '', 'content': '', 'page_number': 1, 'section_hierarchy': '1'}
+        section_num = 1
+        current_content = []
+        
+        for line in lines:
+            line = line.strip()
+            
+            # Check if this line looks like a major heading
+            if (line and 
+                (line.startswith(str(section_num) + '.') or 
+                 line.startswith(str(section_num) + ' ') or
+                 (line.isupper() and len(line) > 5 and len(line) < 100))):
+                
+                # Save previous section if it has content
+                if current_content:
+                    current_section['content'] = '\n'.join(current_content)
+                    if len(current_section['content'].strip()) > 100:  # Only save substantial sections
+                        sections.append(current_section.copy())
+                
+                # Start new section
+                current_section['title'] = line if line else f'Abschnitt {section_num}'
+                current_section['section_hierarchy'] = str(section_num)
+                current_section['page_number'] = section_num
+                current_content = []
+                section_num += 1
+            else:
+                # Add line to current section
+                if line:  # Skip empty lines
+                    current_content.append(line)
+        
+        # Don't forget the last section
+        if current_content:
+            current_section['content'] = '\n'.join(current_content)
+            if len(current_section['content'].strip()) > 100:
+                sections.append(current_section.copy())
+        
+        # If no sections were found, create one big section
+        if not sections:
+            sections.append({
+                'title': filename or 'Dokument',
+                'content': text,
+                'page_number': 1,
+                'section_hierarchy': '1'
+            })
+        
+        logger.info(f"Extracted {len(sections)} sections from text file")
+        return sections
+        
+    except Exception as e:
+        logger.error(f"Text extraction error: {e}")
+        return []
+
 # API Routes
 @api_router.get("/")
 async def root():
