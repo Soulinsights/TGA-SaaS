@@ -93,6 +93,10 @@ function App() {
                 />
               } 
             />
+            <Route 
+              path="/clearance" 
+              element={<ClearanceConfigurator />} 
+            />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
