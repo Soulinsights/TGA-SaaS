@@ -273,9 +273,12 @@ async def compute_clearance(
 ):
     """Compute minimum fire separation clearance"""
     
-    async with await get_db_connection() as db:
-        engine = FireClearanceEngine(db)
+    conn = await get_db_connection()
+    try:
+        engine = FireClearanceEngine(conn)
         return await engine.compute_clearance(request, debug)
+    finally:
+        await conn.close()
 
 @fire_router.get("/products")
 async def get_products():
