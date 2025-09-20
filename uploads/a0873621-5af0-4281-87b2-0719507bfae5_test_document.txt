@@ -1,0 +1,15 @@
+
+            TGA Testdokument
+            
+            Dies ist ein Testdokument für die TGA Knowledge Platform.
+            
+            Brandschutz Grundlagen:
+            - Brandschutzklappen nach DIN 4102
+            - Rauchmelder Installation
+            - Fluchtwegeplanung
+            
+            HLK/RLT Systeme:
+            - Lüftungsanlagen
+            - Klimatechnik
+            - Heizungssysteme
+            
