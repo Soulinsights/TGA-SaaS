@@ -530,6 +530,9 @@ async def process_document(doc_id: str, file_path: Path, file_type: str, doc_slu
                 )
                 content_hash = hashlib.md5(section['content'].encode()).hexdigest()
                 
+                # Convert embedding list to PostgreSQL vector format
+                embedding_str = '[' + ','.join(map(str, embeddings[i])) + ']'
+                
                 await db.execute('''
                     INSERT INTO document_sections (
                         id, document_id, anchor_id, title, content, page_number,
@@ -537,7 +540,7 @@ async def process_document(doc_id: str, file_path: Path, file_type: str, doc_slu
                     ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
                 ''', section_id, doc_id, anchor_id, section['title'], section['content'],
                      section['page_number'], section['section_hierarchy'], content_hash,
-                     embeddings[i])
+                     embedding_str)
             
             # Update document status
             await db.execute(
