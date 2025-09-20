@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search, MessageCircle, Upload, Database, FileText, Building, Shield } from 'lucide-react';
+import { Search, MessageCircle, Upload, Database, FileText, Building, Shield, Calculator } from 'lucide-react';
 
 const HomePage = ({ documents, loading }) => {
   const features = [
