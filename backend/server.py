@@ -18,6 +18,9 @@ from io import BytesIO
 import re
 from emergentintegrations.llm.chat import LlmChat, UserMessage
 
+# Import fire clearance module
+from fire_clearance import fire_router
+
 # Load environment variables
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
