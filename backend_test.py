@@ -287,6 +287,307 @@ class TGABackendTester:
         except Exception as e:
             self.log_test("CORS Configuration", False, f"Error: {str(e)}")
 
+    def test_fire_products_endpoint(self):
+        """Test fire clearance products endpoint"""
+        try:
+            response = requests.get(f"{self.base_url}/api/fire/products", timeout=10)
+            success = response.status_code == 200
+            
+            if success:
+                data = response.json()
+                if isinstance(data, list) and len(data) > 0:
+                    # Check if products have expected structure
+                    first_product = data[0]
+                    expected_keys = ['id', 'name', 'manufacturer_name', 'material']
+                    has_expected_structure = all(key in first_product for key in expected_keys)
+                    
+                    if has_expected_structure:
+                        self.log_test("Fire Products Endpoint", True, f"Retrieved {len(data)} products")
+                    else:
+                        self.log_test("Fire Products Endpoint", False, f"Invalid product structure: {first_product}")
+                else:
+                    self.log_test("Fire Products Endpoint", False, "No products returned")
+            else:
+                self.log_test("Fire Products Endpoint", False, f"Status: {response.status_code}")
+                
+        except Exception as e:
+            self.log_test("Fire Products Endpoint", False, f"Error: {str(e)}")
+
+    def test_fire_materials_endpoint(self):
+        """Test fire clearance materials endpoint"""
+        try:
+            response = requests.get(f"{self.base_url}/api/fire/materials", timeout=10)
+            success = response.status_code == 200
+            
+            if success:
+                data = response.json()
+                if isinstance(data, list) and len(data) > 0:
+                    # Check for expected materials
+                    expected_materials = ['stainless_steel', 'copper', 'plastic']
+                    material_values = [item['value'] for item in data if 'value' in item]
+                    has_expected_materials = any(mat in material_values for mat in expected_materials)
+                    
+                    if has_expected_materials:
+                        self.log_test("Fire Materials Endpoint", True, f"Retrieved {len(data)} materials")
+                    else:
+                        self.log_test("Fire Materials Endpoint", False, f"Missing expected materials: {material_values}")
+                else:
+                    self.log_test("Fire Materials Endpoint", False, "No materials returned")
+            else:
+                self.log_test("Fire Materials Endpoint", False, f"Status: {response.status_code}")
+                
+        except Exception as e:
+            self.log_test("Fire Materials Endpoint", False, f"Error: {str(e)}")
+
+    def test_fire_insulation_classes_endpoint(self):
+        """Test fire clearance insulation classes endpoint"""
+        try:
+            response = requests.get(f"{self.base_url}/api/fire/insulation-classes", timeout=10)
+            success = response.status_code == 200
+            
+            if success:
+                data = response.json()
+                if isinstance(data, list) and len(data) > 0:
+                    # Check for expected insulation classes
+                    expected_classes = ['A1', 'A2', 'B']
+                    class_values = [item['value'] for item in data if 'value' in item]
+                    has_expected_classes = any(cls in class_values for cls in expected_classes)
+                    
+                    if has_expected_classes:
+                        self.log_test("Fire Insulation Classes Endpoint", True, f"Retrieved {len(data)} classes")
+                    else:
+                        self.log_test("Fire Insulation Classes Endpoint", False, f"Missing expected classes: {class_values}")
+                else:
+                    self.log_test("Fire Insulation Classes Endpoint", False, "No insulation classes returned")
+            else:
+                self.log_test("Fire Insulation Classes Endpoint", False, f"Status: {response.status_code}")
+                
+        except Exception as e:
+            self.log_test("Fire Insulation Classes Endpoint", False, f"Error: {str(e)}")
+
+    def test_fire_wrapping_types_endpoint(self):
+        """Test fire clearance wrapping types endpoint"""
+        try:
+            response = requests.get(f"{self.base_url}/api/fire/wrapping-types", timeout=10)
+            success = response.status_code == 200
+            
+            if success:
+                data = response.json()
+                if isinstance(data, list) and len(data) > 0:
+                    # Check for expected wrapping types
+                    expected_wraps = ['metal_wrap_Z', 'metal_wrap_Y']
+                    wrap_values = [item['value'] for item in data if 'value' in item]
+                    has_expected_wraps = any(wrap in wrap_values for wrap in expected_wraps)
+                    
+                    if has_expected_wraps:
+                        self.log_test("Fire Wrapping Types Endpoint", True, f"Retrieved {len(data)} wrapping types")
+                    else:
+                        self.log_test("Fire Wrapping Types Endpoint", False, f"Missing expected wraps: {wrap_values}")
+                else:
+                    self.log_test("Fire Wrapping Types Endpoint", False, "No wrapping types returned")
+            else:
+                self.log_test("Fire Wrapping Types Endpoint", False, f"Status: {response.status_code}")
+                
+        except Exception as e:
+            self.log_test("Fire Wrapping Types Endpoint", False, f"Error: {str(e)}")
+
+    def test_fire_jurisdictions_endpoint(self):
+        """Test fire clearance jurisdictions endpoint"""
+        try:
+            response = requests.get(f"{self.base_url}/api/fire/jurisdictions", timeout=10)
+            success = response.status_code == 200
+            
+            if success:
+                data = response.json()
+                if isinstance(data, list) and len(data) > 0:
+                    # Check for expected German states
+                    expected_states = ['BY', 'BW', 'NW']
+                    state_values = [item['value'] for item in data if 'value' in item]
+                    has_expected_states = any(state in state_values for state in expected_states)
+                    
+                    if has_expected_states:
+                        self.log_test("Fire Jurisdictions Endpoint", True, f"Retrieved {len(data)} jurisdictions")
+                    else:
+                        self.log_test("Fire Jurisdictions Endpoint", False, f"Missing expected states: {state_values}")
+                else:
+                    self.log_test("Fire Jurisdictions Endpoint", False, "No jurisdictions returned")
+            else:
+                self.log_test("Fire Jurisdictions Endpoint", False, f"Status: {response.status_code}")
+                
+        except Exception as e:
+            self.log_test("Fire Jurisdictions Endpoint", False, f"Error: {str(e)}")
+
+    def test_fire_clearance_compute_golden_case_1(self):
+        """Test fire clearance computation - Golden Case 1 (AbP approval - 0mm)"""
+        try:
+            # Golden Case 1: Stainless steel + A2 insulation + DN=200 + metal_wrap_Z + parallel + clamp 1.5m → 0mm zulässig (AbP source)
+            clearance_request = {
+                "product_id": "1",  # Assuming first product from seed data
+                "material": "stainless_steel",
+                "DN": 200,
+                "insulation": {
+                    "class": "A2",
+                    "thickness_mm": 30,
+                    "wrap": ["metal_wrap_Z"]
+                },
+                "layout": "parallel",
+                "bundle_count": 1,
+                "mount": {
+                    "clamp_spacing_m": 1.5
+                },
+                "context": {
+                    "location": "shaft",
+                    "jurisdiction": "BY",
+                    "building_class": "Hochhaus"
+                }
+            }
+            
+            response = requests.post(
+                f"{self.base_url}/api/fire/clearance/compute",
+                json=clearance_request,
+                headers={'Content-Type': 'application/json'},
+                timeout=15
+            )
+            
+            success = response.status_code == 200
+            
+            if success:
+                data = response.json()
+                expected_keys = ['min_clearance_mm', 'status', 'sources']
+                has_expected_structure = all(key in data for key in expected_keys)
+                
+                if has_expected_structure:
+                    # Check if we get 0mm clearance (AbP approval case)
+                    clearance = data['min_clearance_mm']
+                    status = data['status']
+                    sources = data['sources']
+                    
+                    # For golden case 1, we expect 0mm with AbP source
+                    if clearance == 0 and any(source.get('type') == 'AbP' for source in sources):
+                        self.log_test("Fire Clearance Golden Case 1 (AbP)", True, 
+                                    f"Clearance: {clearance}mm, Status: {status}, Sources: {len(sources)}")
+                    else:
+                        self.log_test("Fire Clearance Golden Case 1 (AbP)", False, 
+                                    f"Expected 0mm with AbP source, got {clearance}mm with sources: {[s.get('type') for s in sources]}")
+                else:
+                    self.log_test("Fire Clearance Golden Case 1 (AbP)", False, f"Invalid response structure: {data}")
+            else:
+                self.log_test("Fire Clearance Golden Case 1 (AbP)", False, f"Status: {response.status_code}, Response: {response.text}")
+                
+        except Exception as e:
+            self.log_test("Fire Clearance Golden Case 1 (AbP)", False, f"Error: {str(e)}")
+
+    def test_fire_clearance_compute_golden_case_2(self):
+        """Test fire clearance computation - Golden Case 2 (MLAR fallback - 50mm)"""
+        try:
+            # Golden Case 2: Same as case 1 but missing metal_wrap_Z → 50mm default (MLAR source)
+            clearance_request = {
+                "product_id": "1",
+                "material": "stainless_steel",
+                "DN": 200,
+                "insulation": {
+                    "class": "A2",
+                    "thickness_mm": 30,
+                    "wrap": []  # No wrapping - should trigger MLAR fallback
+                },
+                "layout": "parallel",
+                "bundle_count": 1,
+                "mount": {
+                    "clamp_spacing_m": 1.5
+                },
+                "context": {
+                    "location": "shaft",
+                    "jurisdiction": "BY",
+                    "building_class": "Hochhaus"
+                }
+            }
+            
+            response = requests.post(
+                f"{self.base_url}/api/fire/clearance/compute",
+                json=clearance_request,
+                headers={'Content-Type': 'application/json'},
+                timeout=15
+            )
+            
+            success = response.status_code == 200
+            
+            if success:
+                data = response.json()
+                expected_keys = ['min_clearance_mm', 'status', 'sources']
+                has_expected_structure = all(key in data for key in expected_keys)
+                
+                if has_expected_structure:
+                    clearance = data['min_clearance_mm']
+                    status = data['status']
+                    sources = data['sources']
+                    
+                    # For golden case 2, we expect 50mm with MLAR source
+                    if clearance == 50 and any(source.get('type') == 'MLAR' for source in sources):
+                        self.log_test("Fire Clearance Golden Case 2 (MLAR)", True, 
+                                    f"Clearance: {clearance}mm, Status: {status}, Sources: {len(sources)}")
+                    else:
+                        self.log_test("Fire Clearance Golden Case 2 (MLAR)", False, 
+                                    f"Expected 50mm with MLAR source, got {clearance}mm with sources: {[s.get('type') for s in sources]}")
+                else:
+                    self.log_test("Fire Clearance Golden Case 2 (MLAR)", False, f"Invalid response structure: {data}")
+            else:
+                self.log_test("Fire Clearance Golden Case 2 (MLAR)", False, f"Status: {response.status_code}, Response: {response.text}")
+                
+        except Exception as e:
+            self.log_test("Fire Clearance Golden Case 2 (MLAR)", False, f"Error: {str(e)}")
+
+    def test_fire_clearance_compute_with_debug(self):
+        """Test fire clearance computation with debug mode"""
+        try:
+            clearance_request = {
+                "product_id": "1",
+                "material": "stainless_steel",
+                "DN": 100,
+                "insulation": {
+                    "class": "A1",
+                    "thickness_mm": 25,
+                    "wrap": ["metal_wrap_Z"]
+                },
+                "layout": "parallel",
+                "bundle_count": 1,
+                "mount": {
+                    "clamp_spacing_m": 1.0
+                },
+                "context": {
+                    "location": "wall",
+                    "jurisdiction": "BW",
+                    "building_class": "Gewerbebau"
+                }
+            }
+            
+            response = requests.post(
+                f"{self.base_url}/api/fire/clearance/compute?debug=true",
+                json=clearance_request,
+                headers={'Content-Type': 'application/json'},
+                timeout=15
+            )
+            
+            success = response.status_code == 200
+            
+            if success:
+                data = response.json()
+                if 'debug_info' in data and data['debug_info'] is not None:
+                    debug_info = data['debug_info']
+                    has_debug_data = 'rules_loaded' in debug_info or 'approval_matches' in debug_info
+                    
+                    if has_debug_data:
+                        self.log_test("Fire Clearance Debug Mode", True, 
+                                    f"Debug info present with {debug_info.get('rules_loaded', 0)} rules loaded")
+                    else:
+                        self.log_test("Fire Clearance Debug Mode", False, f"Debug info missing expected data: {debug_info}")
+                else:
+                    self.log_test("Fire Clearance Debug Mode", False, "No debug_info in response")
+            else:
+                self.log_test("Fire Clearance Debug Mode", False, f"Status: {response.status_code}")
+                
+        except Exception as e:
+            self.log_test("Fire Clearance Debug Mode", False, f"Error: {str(e)}")
+
     def run_all_tests(self):
         """Run all backend tests"""
         print("🚀 Starting TGA Knowledge Platform Backend Tests")
@@ -312,6 +613,17 @@ class TGABackendTester:
         # Search and Q&A tests
         self.test_search_endpoint()
         self.test_qa_endpoint()
+        
+        # Fire Clearance Module Tests
+        print("\n🔥 Testing Fire Clearance Module...")
+        self.test_fire_products_endpoint()
+        self.test_fire_materials_endpoint()
+        self.test_fire_insulation_classes_endpoint()
+        self.test_fire_wrapping_types_endpoint()
+        self.test_fire_jurisdictions_endpoint()
+        self.test_fire_clearance_compute_golden_case_1()
+        self.test_fire_clearance_compute_golden_case_2()
+        self.test_fire_clearance_compute_with_debug()
         
         # Print summary
         print("\n" + "=" * 60)
