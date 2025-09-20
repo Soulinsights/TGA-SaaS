@@ -256,7 +256,7 @@ async def get_embeddings(texts: List[str]) -> List[List[float]]:
             except Exception as embed_error:
                 logger.warning(f"Embedding error for text chunk: {embed_error}")
                 # Fallback to simple mock embedding
-                embedding = [0.1 * (i % 10) for i in range(3072)]  # Simple pattern
+                embedding = [0.1 * (i % 10) for i in range(1536)]  # Simple pattern, 1536 dimensions
                 embeddings.append(embedding)
         
         logger.info(f"Generated {len(embeddings)} embeddings")
