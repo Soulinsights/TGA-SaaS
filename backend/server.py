@@ -525,7 +525,7 @@ async def search_documents(
         
         params = [
             search_query.query.replace(' ', ' & '),  # FTS query
-            query_embedding,  # Vector query
+            str(query_embedding),  # Vector query as string
             float(os.environ.get('SEARCH_FTS_WEIGHT', 0.45)),  # FTS weight
             float(os.environ.get('SEARCH_VECTOR_WEIGHT', 0.55))  # Vector weight
         ]
