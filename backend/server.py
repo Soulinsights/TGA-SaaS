@@ -267,7 +267,7 @@ async def get_embeddings(texts: List[str]) -> List[List[float]]:
         # Return deterministic mock embeddings
         embeddings = []
         for i, text in enumerate(texts):
-            embedding = [0.1 * ((i + j) % 10) for j in range(3072)]  # Unique per text
+            embedding = [0.1 * ((i + j) % 10) for j in range(1536)]  # Unique per text, 1536 dimensions
             embeddings.append(embedding)
         return embeddings
 
