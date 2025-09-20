@@ -11,6 +11,7 @@ import DocumentViewer from './components/DocumentViewer';
 import QAChat from './components/QAChat';
 import UploadConsole from './components/UploadConsole';
 import ProjectProfiles from './components/ProjectProfiles';
+import ClearanceConfigurator from './components/ClearanceConfigurator';
 
 const API_BASE_URL = process.env.REACT_APP_BACKEND_URL;
 
