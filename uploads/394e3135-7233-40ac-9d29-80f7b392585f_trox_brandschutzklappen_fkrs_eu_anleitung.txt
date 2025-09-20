@@ -1,0 +1,259 @@
+TROX BRANDSCHUTZKLAPPEN SERIE FKRS-EU
+Montage- und Betriebsanleitung
+
+Version 5.0 DE | Juni 2020
+TROX GmbH, Neukirchen-Vluyn
+
+INHALTSVERZEICHNIS
+
+1. SICHERHEITSHINWEISE UND BESTIMMUNGSGEMÄSSE VERWENDUNG
+2. PRODUKTBESCHREIBUNG UND TECHNISCHE DATEN
+3. TRANSPORT UND LAGERUNG
+4. MONTAGE UND INSTALLATION
+5. ELEKTRISCHER ANSCHLUSS
+6. INBETRIEBNAHME UND FUNKTIONSPRÜFUNG
+7. WARTUNG UND SERVICE
+8. TECHNISCHE SPEZIFIKATIONEN
+9. ZULASSUNGEN UND NORMEN
+
+1. SICHERHEITSHINWEISE UND BESTIMMUNGSGEMÄSSE VERWENDUNG
+
+1.1 Allgemeine Sicherheitshinweise
+Die Brandschutzklappen der Serie FKRS-EU sind ausschließlich für den Einbau in Lüftungsanlagen zum Verschluss von Kanälen und Öffnungen in brandabschnittsbildenden Bauteilen bestimmt.
+
+WARNUNG: Unsachgemäße Installation oder Verwendung kann zu Personen- und Sachschäden führen!
+
+- Installation nur durch qualifiziertes Fachpersonal
+- Nationale und örtliche Vorschriften beachten
+- Produktdokumentation vollständig lesen vor Installation
+- Regelmäßige Wartung gemäß DIN 31051 durchführen
+
+1.2 Bestimmungsgemäße Verwendung
+- Brandschutz in Lüftungsanlagen nach DIN EN 1366-2
+- Einsatz in brandabschnittsbildenden Bauteilen
+- Betriebstemperatur: -30°C bis +70°C
+- Maximale Dauertemperatur: +70°C
+- Feuerwiderstandsklassen: E 30, E 60, E 90, E 120
+
+2. PRODUKTBESCHREIBUNG UND TECHNISCHE DATEN
+
+2.1 Produktübersicht
+Die FKRS-EU Brandschutzklappen sind rechteckige Brandschutzklappen mit thermisch auslösendem Schmelzlot (72°C ±5°C) und optionalem elektrisch ansteuerbarem Stellantrieb.
+
+Hauptkomponenten:
+- Verzinktes Stahlblechgehäuse
+- Brandschutzklappe mit Schaumstoffdichtung
+- Schmelzlot-Auslöser 72°C
+- Rückstellfeder
+- Stellantrieb (optional)
+
+2.2 Abmessungen und Gewichte
+Nennweiten: 100 x 100 mm bis 1600 x 1200 mm
+Einbaulängen: Standard 200 mm, optional 100 mm oder 300 mm
+Gewicht: abhängig von Größe, 3,5 kg bis 85 kg
+
+2.3 Leistungsdaten
+- Feuerwiderstand: bis 120 Minuten (E 120)
+- Leckage: Klasse C nach DIN EN 1751
+- Druckverlust: Je nach Größe 15-50 Pa bei 3 m/s
+- Schließzeit: < 15 Sekunden (thermisch)
+- Schließzeit: < 30 Sekunden (elektrisch)
+
+3. TRANSPORT UND LAGERUNG
+
+3.1 Transport
+- Verpackung auf Beschädigungen prüfen
+- Vorsichtig transportieren, Stöße vermeiden
+- Bei Beschädigungen: Sofort reklamieren
+
+3.2 Lagerung
+- Trocken und frostfrei lagern
+- Temperaturbereich: -20°C bis +60°C
+- Originalverpackung bis zur Montage verwenden
+- Vor direkter Sonneneinstrahlung schützen
+
+4. MONTAGE UND INSTALLATION
+
+4.1 Vorbereitende Arbeiten
+Vor Beginn der Montage:
+- Wandöffnung auf korrekte Abmessungen prüfen
+- Öffnung muss rechtwinklig und eben sein
+- Toleranz: ±2 mm
+- Brandabschnittsdicke beachten (max. 300 mm)
+
+4.2 Einbau in Mauerwerk/Beton
+1. Brandschutzklappe in Wandöffnung einsetzen
+2. Ausrichtung mit Wasserwaage prüfen
+3. Befestigung mit Dübeln M8 oder M10
+   - Mindestens 4 Befestigungspunkte pro Seite
+   - Dübelabstand max. 300 mm
+4. Ringspalt mit Brandschutzmörtel verschließen
+   - Mörtel muss gleichen Feuerwiderstand haben
+   - Vollständiges Ausfüllen erforderlich
+
+4.3 Einbau in Leichtbauwände
+1. Verstärkung der Wandkonstruktion prüfen
+2. Zarge einbauen und befestigen
+3. Brandschutzklappe in Zarge einsetzen
+4. Abdichtung gemäß Zulassung durchführen
+
+4.4 Kanalanschluss
+- Kanäle zentrisch anschließen
+- Flexible Verbindungen verwenden
+- Mindestabstand zu Bögen: 3 x Kanaldurchmesser
+- Einlaufstrecke gerade ausführen
+
+5. ELEKTRISCHER ANSCHLUSS
+
+5.1 Allgemeine Hinweise
+WARNUNG: Elektrische Arbeiten nur durch Elektrofachkraft!
+
+- Spannung: 24 V AC/DC oder 230 V AC
+- Schutzart: IP 54
+- Temperaturbereich: -10°C bis +60°C
+- Anschluss über 3-adriges Kabel
+
+5.2 Stellantrieb-Anschluss
+Standardanschluss (3-adrig):
+- Braun: Phase L
+- Blau: Neutralleiter N  
+- Grün/Gelb: Schutzleiter PE
+
+5.3 Endschalter
+- 2 x Wechsler-Kontakte
+- Schaltleistung: 250 V AC, 6 A
+- Kontakt 1: Klappe AUF-Meldung
+- Kontakt 2: Klappe ZU-Meldung
+
+5.4 Fernauslösung
+- Auslösung über potentialfreien Kontakt
+- Mindest-Impulsdauer: 1 Sekunde
+- Nach Auslösung: Automatische Rückstellung bei Entriegelung
+
+6. INBETRIEBNAHME UND FUNKTIONSPRÜFUNG
+
+6.1 Sichtprüfung
+Vor Inbetriebnahme prüfen:
+- Vollständigkeit der Montage
+- Mechanische Befestigung
+- Elektrische Anschlüsse
+- Freigängigkeit der Klappe
+- Schmelzlot-Auslöser intakt
+
+6.2 Funktionsprüfung
+1. Thermische Auslösung testen:
+   - Heißluftföhn auf Schmelzlot richten
+   - Auslösung bei ca. 72°C ±5°C
+   - Schließzeit < 15 Sekunden prüfen
+
+2. Elektrische Auslösung testen:
+   - Auslösesignal geben
+   - Schließzeit < 30 Sekunden prüfen
+   - Endschalter-Funktion prüfen
+
+6.3 Protokollierung
+- Prüfprotokoll erstellen und archivieren
+- Datum, Prüfer, Ergebnis dokumentieren
+- Bei Mängeln: Nachbesserung vor Freigabe
+
+7. WARTUNG UND SERVICE
+
+7.1 Wartungsintervalle
+Nach DIN 31051 und DIN 18017-3:
+- Sichtprüfung: alle 3 Monate
+- Funktionsprüfung: alle 6 Monate
+- Vollwartung: jährlich
+
+7.2 Wartungsarbeiten
+Sichtprüfung:
+- Gehäuse auf Beschädigungen prüfen
+- Korrosion kontrollieren
+- Schmelzlot auf Intaktheit prüfen
+- Dichtungen kontrollieren
+
+Funktionsprüfung:
+- Thermische Auslösung testen
+- Elektrische Funktionen prüfen
+- Schließzeiten messen
+- Endschalter testen
+
+7.3 Austausch von Verschleißteilen
+- Schmelzlot: nach jeder Auslösung
+- Dichtungen: bei Beschädigung
+- Stellantrieb: nach Herstellerangaben
+
+7.4 Störungen und Abhilfe
+
+Störung: Klappe schließt nicht thermisch
+Ursache: Schmelzlot defekt/verschmutzt
+Abhilfe: Schmelzlot reinigen/austauschen
+
+Störung: Klappe schließt nicht elektrisch  
+Ursache: Stellantrieb defekt/Stromausfall
+Abhilfe: Spannung prüfen/Stellantrieb ersetzen
+
+Störung: Undichtigkeit
+Ursache: Dichtung beschädigt
+Abhilfe: Dichtung erneuern
+
+8. TECHNISCHE SPEZIFIKATIONEN
+
+8.1 Werkstoffe
+- Gehäuse: Stahlblech verzinkt, St 37-2
+- Klappe: Stahlblech mit Brandschutzdämmung
+- Dichtung: Brandschutzschaum, hitzebeständig
+- Scharniere: Edelstahl
+- Befestigungsmaterial: verzinkt
+
+8.2 Betriebsbedingungen
+- Umgebungstemperatur: -30°C bis +70°C
+- Relative Luftfeuchte: max. 95%
+- Betriebsdruck: max. ±2000 Pa
+- Auslösetemperatur Schmelzlot: 72°C ±5°C
+
+8.3 Abmessungstabelle
+
+| Nennweite B x H [mm] | Einbaulänge [mm] | Gewicht [kg] | Art.-Nr. |
+|---------------------|------------------|--------------|----------|
+| 100 x 100           | 200              | 3,5          | FKRS-EU-100-100 |
+| 200 x 200           | 200              | 6,8          | FKRS-EU-200-200 |
+| 300 x 300           | 200              | 12,5         | FKRS-EU-300-300 |
+| 400 x 400           | 200              | 18,2         | FKRS-EU-400-400 |
+| 500 x 500           | 200              | 25,8         | FKRS-EU-500-500 |
+| 600 x 600           | 200              | 35,4         | FKRS-EU-600-600 |
+
+9. ZULASSUNGEN UND NORMEN
+
+9.1 Europäische Normen
+- DIN EN 1366-2: Prüfungen für Feuerwiderstand von Installationen - Brandschutzklappen
+- DIN EN 15650: Klassifizierung und Leistungskriterien für Brandschutzklappen
+- DIN EN 1751: Lüftung von Gebäuden - Luftterminalgeräte - Aerodynamische Prüfung von Brandschutzklappen
+
+9.2 Deutsche Normen
+- DIN 18017-3: Lüftung von Bädern und Toilettenräumen ohne Außenfenster
+- DIN 31051: Grundlagen der Instandhaltung
+- MBO: Musterbauordnung
+- M-LüAR: Muster-Lüftungsanlagen-Richtlinie
+
+9.3 Zulassungen und Zertifikate
+- CE-Kennzeichnung nach CPR
+- Allgemeine bauaufsichtliche Zulassung (abZ)
+- VdS-Anerkennung
+- MLAR-konform
+
+Leistungserklärung gemäß CPR:
+- Feuerwiderstand: E 120 (ve ho i↔o) C300
+- Leckage: C (300 Pa), A (1500 Pa)
+- Mechanische Festigkeit: M0 (500 Pa)
+
+TROX GmbH
+Heinrich-Trox-Platz
+47506 Neukirchen-Vluyn
+Deutschland
+
+Tel: +49 2845 202-0
+www.trox.de
+info@trox.de
+
+© 2020 TROX GmbH. Alle Rechte vorbehalten.
+Technische Änderungen vorbehalten.
