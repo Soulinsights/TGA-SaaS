@@ -230,7 +230,7 @@ async def get_embeddings(texts: List[str]) -> List[List[float]]:
         embeddings = []
         for text in texts:
             # Generate a mock embedding for now - replace with actual embedding call
-            embedding = [0.1] * 3072  # Mock 3072-dimensional embedding
+            embedding = [0.1] * 1536  # Mock 1536-dimensional embedding
             embeddings.append(embedding)
         return embeddings
     except Exception as e:
