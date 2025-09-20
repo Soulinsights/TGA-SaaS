@@ -484,8 +484,13 @@ async def process_document(doc_id: str, file_path: Path, file_type: str, doc_slu
             sections = []
             if 'pdf' in file_type:
                 sections = extract_text_from_pdf(file_content)
+            elif 'text' in file_type or file_type == 'text/plain':
+                sections = extract_text_from_txt(file_content, str(file_path.name))
+            else:
+                logger.warning(f"Unsupported file type: {file_type}")
             
             if not sections:
+                logger.error(f"No sections extracted from {file_path}")
                 await db.execute(
                     "UPDATE documents SET processing_status = 'failed' WHERE id = $1",
                     doc_id
