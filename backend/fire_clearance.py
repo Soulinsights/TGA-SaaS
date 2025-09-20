@@ -280,7 +280,8 @@ async def compute_clearance(
 @fire_router.get("/products")
 async def get_products():
     """Get available products for selection"""
-    async with await get_db_connection() as db:
+    conn = await get_db_connection()
+    try:
         query = """
             SELECT p.id, p.name, p.manufacturer_id, p.material, p.system_code,
                    m.name as manufacturer_name
@@ -288,8 +289,10 @@ async def get_products():
             LEFT JOIN manufacturers m ON p.manufacturer_id = m.id
             ORDER BY m.name, p.name
         """
-        rows = await db.fetch(query)
+        rows = await conn.fetch(query)
         return [dict(row) for row in rows]
+    finally:
+        await conn.close()
 
 @fire_router.get("/materials")
 async def get_materials():
