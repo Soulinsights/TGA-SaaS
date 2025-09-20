@@ -245,7 +245,7 @@ async def get_embeddings(texts: List[str]) -> List[List[float]]:
                 
                 # Create a pseudo-embedding from hash (deterministic but unique per text)
                 embedding = []
-                for i in range(3072):
+                for i in range(1536):  # Use 1536 dimensions (correct for text-embedding-3-large)
                     # Use hash bytes to create embedding values between -1 and 1
                     hash_byte = int(text_hash[(i * 2) % len(text_hash):(i * 2 + 2) % len(text_hash) + 1], 16) if len(text_hash) > (i * 2) % len(text_hash) else 0
                     normalized_val = (hash_byte / 255.0) * 2 - 1  # Scale to -1 to 1
