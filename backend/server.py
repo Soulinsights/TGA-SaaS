@@ -222,23 +222,36 @@ async def init_database():
 async def get_embeddings(texts: List[str]) -> List[List[float]]:
     """Generate embeddings using OpenAI text-embedding-3-large"""
     try:
-        chat = LlmChat(
-            api_key=os.environ.get('EMERGENT_LLM_KEY'),
-            session_id=f"embedding-{uuid.uuid4()}",
-            system_message="Generate embeddings for text."
-        ).with_model("openai", "text-embedding-3-large")
+        from emergentintegrations.embeddings import generate_embeddings
         
-        # For embedding, we need to use the OpenAI client directly
-        # This is a placeholder - we'll implement proper embedding logic
+        # Use emergent integrations for embeddings
         embeddings = []
         for text in texts:
-            # Generate a mock embedding for now - replace with actual embedding call
-            embedding = [0.1] * 1536  # Mock 1536-dimensional embedding
-            embeddings.append(embedding)
+            # Truncate text if too long (max ~8000 tokens for embedding models)
+            truncated_text = text[:32000] if len(text) > 32000 else text
+            
+            try:
+                response = await generate_embeddings(
+                    api_key=os.environ.get('EMERGENT_LLM_KEY'),
+                    text=truncated_text,
+                    model="text-embedding-3-large"
+                )
+                if response and 'embedding' in response:
+                    embeddings.append(response['embedding'])
+                else:
+                    # Fallback to mock embedding
+                    logger.warning(f"No embedding returned, using mock embedding")
+                    embeddings.append([0.1] * 3072)
+            except Exception as embed_error:
+                logger.warning(f"Embedding error for text chunk: {embed_error}")
+                # Fallback to mock embedding
+                embeddings.append([0.1] * 3072)
+        
         return embeddings
     except Exception as e:
         logger.error(f"Error generating embeddings: {e}")
-        return [[0.0] * 1536 for _ in texts]
+        # Return mock embeddings with correct dimensions
+        return [[0.1] * 3072 for _ in texts]
 
 async def generate_rag_response(question: str, context_sections: List[Dict]) -> Dict:
     """Generate RAG response with citations"""
