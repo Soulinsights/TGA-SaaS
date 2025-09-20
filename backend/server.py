@@ -208,10 +208,11 @@ async def init_database():
             ON document_sections USING gin(to_tsvector('german', content))
         ''')
         
-        # Create vector similarity index
+        # Create vector similarity index (using ivfflat instead of hnsw for high dimensions)
         await conn.execute('''
-            CREATE INDEX IF NOT EXISTS idx_sections_embedding_hnsw 
-            ON document_sections USING hnsw (embedding vector_cosine_ops)
+            CREATE INDEX IF NOT EXISTS idx_sections_embedding_ivfflat 
+            ON document_sections USING ivfflat (embedding vector_cosine_ops)
+            WITH (lists = 100)
         ''')
 
 # LLM Integration
