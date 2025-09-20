@@ -13,7 +13,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 import magic
-import pypdf2
+import PyPDF2
 from io import BytesIO
 import re
 from emergentintegrations.llm.chat import LlmChat, UserMessage
@@ -310,7 +310,7 @@ def extract_text_from_pdf(file_content: bytes) -> List[Dict]:
     """Extract text and metadata from PDF"""
     try:
         pdf_file = BytesIO(file_content)
-        pdf_reader = pypdf2.PdfReader(pdf_file)
+        pdf_reader = PyPDF2.PdfReader(pdf_file)
         
         sections = []
         for page_num, page in enumerate(pdf_reader.pages, 1):
