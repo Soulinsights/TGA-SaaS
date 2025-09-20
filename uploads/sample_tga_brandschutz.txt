@@ -1,0 +1,158 @@
+BRANDSCHUTZ-RICHTLINIE FÜR TECHNISCHE GEBÄUDEAUSRÜSTUNG
+Version 2024.1 - Bayern
+
+1. EINFÜHRUNG
+
+Die Brandschutz-Anforderungen für technische Gebäudeausrüstung (TGA) in Bayern richten sich nach den aktuellen Bestimmungen der Bayerischen Bauordnung (BayBO) sowie den einschlägigen DIN-Normen und VDI-Richtlinien.
+
+1.1 Geltungsbereich
+Diese Richtlinie gilt für alle TGA-Anlagen in:
+- Hochhäusern (über 22m Höhe)
+- Krankenhäusern und Pflegeeinrichtungen  
+- Schulen und öffentlichen Gebäuden
+- Gewerbebetrieben und Industrieanlagen
+
+1.2 Rechtliche Grundlagen
+- DIN 4102: Brandverhalten von Baustoffen und Bauteilen
+- DIN EN 12101: Rauch- und Wärmefreihaltung
+- VDI 6019: Brandschutz in der Gebäudetechnik
+- M-LüAR: Muster-Lüftungsanlagen-Richtlinie
+
+2. BRANDSCHUTZKLAPPEN
+
+2.1 Anforderungen an Brandschutzklappen
+Brandschutzklappen müssen nach DIN EN 1366-2 geprüft und nach DIN EN 15650 klassifiziert sein.
+
+Klassifizierung:
+- E 30 für Standardanwendungen
+- E 90 für erhöhte Anforderungen  
+- E 120 für Hochrisikobereiche
+
+2.2 Einbau und Wartung
+Der Einbau erfolgt gemäß Herstellerangaben und DIN 18017-3.
+Regelmäßige Wartung nach DIN 31051 erforderlich.
+
+2.3 Zulassungen
+Nur Produkte mit allgemeiner bauaufsichtlicher Zulassung (abZ) oder europäisch technische Bewertung (ETA) verwenden.
+
+Beispielhersteller:
+- TROX: Brandschutzklappen Serie FK-EU
+- Wolf: Brandschutzklappen BSK-RWA
+- Systemair: Fire dampers FD series
+
+3. LÜFTUNGSANLAGEN
+
+3.1 Rauch- und Wärmeabzugsanlagen (RWA)
+RWA-Anlagen nach DIN EN 12101-3 für:
+- Treppenhäuser und Flure
+- Atrien und große Räume
+- Tiefgaragen
+
+3.2 Brandschutz in Lüftungskanälen  
+- Kanäle aus nicht brennbaren Materialien (A1/A2 nach DIN EN 13501-1)
+- Brandschotte nach DIN 4102-9
+- Revisionsöffnungen mit Feuerwiderstand
+
+4. ELEKTRISCHE ANLAGEN
+
+4.1 Kabelführung
+- Funktionserhalt E30/E90 für Sicherheitsstromkreise
+- Kabelschotte nach DIN 4102-9
+- Brandmeldekabel nach DIN VDE 0815
+
+4.2 OBO Bettermann Brandschutz-Systeme
+- Kabeldurchführungen CFS-T
+- Brandschotte BIS
+- Kabelträger-Systeme mit Brandschutz
+
+5. ROHRLEITUNGEN UND SANITÄR
+
+5.1 Rohrdurchführungen
+Rohrabschottungen nach DIN 4102-9:
+- Kunststoffrohre: Brandschutzmanschetten
+- Metallrohre: Mineralfaser-Abschottung
+- Mehrspartenabschottungen für gemischte Installationen
+
+5.2 Herstellerprodukte
+Viega:
+- Brandschutz-Rohrabschottungen Megapress
+- Prestabo-Systeme mit Brandschutz-Zulassung
+
+Geberit:
+- Brandschutz-Rohrdurchführungen
+- Silent-Pro Abwassersystem mit Brandschutz
+
+6. PUMPEN UND HSL-ANLAGEN
+
+6.1 Heizungs-, Sanitär- und Lüftungsanlagen
+- Pumpengruppen in brandabschnittsgetrennten Räumen
+- Wilo: Brandschutz-konforme Umwälzpumpen
+- Grundfos: Sicherheitspumpen für Sprinkleranlagen
+
+6.2 Sicherheitsanforderungen
+- Notstromversorgung für sicherheitsrelevante Pumpen
+- Automatische Abschaltung bei Brandmeldung
+- Überwachung durch Gebäudeleittechnik
+
+7. WARTUNG UND PRÜFUNG
+
+7.1 Prüffristen
+- Brandschutzklappen: halbjährlich
+- RWA-Anlagen: halbjährlich  
+- Sprinkleranlagen: nach DIN 14462
+- Elektrische Anlagen: jährlich
+
+7.2 Dokumentation
+Vollständige Dokumentation aller Prüfungen und Wartungen erforderlich.
+Prüfbücher nach VdS-Richtlinien führen.
+
+8. COMPLIANCE UND ZERTIFIZIERUNG
+
+8.1 CE-Kennzeichnung
+Alle Brandschutzprodukte müssen CE-gekennzeichnet sein.
+
+8.2 Bauaufsichtliche Zulassungen
+- abZ (allgemeine bauaufsichtliche Zulassung)
+- ETA (europäisch technische Bewertung)
+- Ü-Zeichen für überwachungsbedürftige Anlagen
+
+8.3 Prüfstellen
+- MPA Bayern: Materialprüfungen
+- IBS: Institut für Brandschutztechnik
+- VdS Schadenverhütung: Sprinkleranlagen
+
+9. PROJEKTSPEZIFISCHE ANFORDERUNGEN
+
+9.1 Hochhäuser (> 22m)
+- Verstärkte Anforderungen nach MHochR
+- Sicherheitsstromversorgung 90 min
+- Redundante Sicherheitssysteme
+
+9.2 Krankenhäuser
+- Funktionserhalt kritischer Systeme
+- Notstromversorgung nach DIN VDE 0107-1
+- Spezielle Anforderungen für OP-Bereiche
+
+9.3 Schulen und öffentliche Gebäude
+- Fluchtwegebeleuchtung nach DIN EN 1838
+- Sprachalarmierung nach DIN VDE 0833-4
+- Rauch- und Wärmeabzug in Versammlungsräumen
+
+10. NOTFALLMANAGEMENT
+
+10.1 Brandmeldeanlagen
+Integration aller TGA-Systeme in die Brandmeldeanlage.
+Automatische Abschaltung nicht sicherheitsrelevanter Anlagen.
+
+10.2 Feuerwehr-Bedienfeld
+Zentrale Steuerung aller sicherheitsrelevanten TGA-Systeme.
+Übersichtliche Kennzeichnung nach DIN 14675.
+
+---
+
+Herausgeber: TGA Expertengremium Bayern
+Stand: Januar 2024
+Nächste Überprüfung: Januar 2025
+
+Kontakt: info@tga-bayern.de
+Web: www.tga-brandschutz-bayern.de
