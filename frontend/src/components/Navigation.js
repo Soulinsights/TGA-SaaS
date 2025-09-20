@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Search, Upload, MessageCircle, Settings, Database, Building } from 'lucide-react';
+import { Search, Upload, MessageCircle, Settings, Database, Building, Calculator } from 'lucide-react';
 
 const Navigation = ({ currentProject }) => {
   const location = useLocation();
