@@ -17,6 +17,12 @@ const HomePage = ({ documents, loading }) => {
       link: '/qa'
     },
     {
+      icon: Calculator,
+      title: 'Brandschutz-Rechner',
+      description: 'Berechnung von Mindestabständen für TGA-Leitungen nach deutschen Brandschutzbestimmungen und AbP/AbZ-Zulassungen.',
+      link: '/clearance'
+    },
+    {
       icon: Upload,
       title: 'Dokument-Upload',
       description: 'Laden Sie PDFs hoch - automatische OCR, Textextraktion, Kategorisierung und Embedding-Generierung.',
@@ -27,12 +33,6 @@ const HomePage = ({ documents, loading }) => {
       title: 'Projekt-Profile',
       description: 'Definieren Sie Projektkontext (Bundesland, Gebäudetyp) für maßgeschneiderte Suchergebnisse und Compliance.',
       link: '/projects'
-    },
-    {
-      icon: Shield,
-      title: 'Lizenz-Compliance',
-      description: 'Automatische Erkennung lizenzierter DIN/VDI-Normen mit Metadaten-Anzeige und Deep-Links zu offiziellen Quellen.',
-      link: '/search'
     },
     {
       icon: Database,
