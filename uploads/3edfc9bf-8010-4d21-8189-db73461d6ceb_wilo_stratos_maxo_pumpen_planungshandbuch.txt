@@ -1,0 +1,387 @@
+WILO-STRATOS MAXO HOCHEFFIZIENZPUMPEN
+Planungshandbuch für Heizungs-, Kälte- und Klimaanlagen
+
+Version 4.1 DE | März 2024
+WILO SE, Dortmund
+
+INHALTSVERZEICHNIS
+
+1. PRODUKTÜBERSICHT UND EINSATZGEBIETE
+2. ENERGIEEFFIZIENZ UND UMWELTASPEKTE
+3. HYDRAULISCHE AUSLEGUNG UND DIMENSIONIERUNG
+4. TECHNISCHE SPEZIFIKATIONEN
+5. INSTALLATION UND INBETRIEBNAHME
+6. REGELUNG UND BETRIEBSARTEN
+7. WARTUNG UND SERVICE
+8. DIGITALE SERVICES UND CONNECTIVITY
+9. NORMEN UND ZERTIFIZIERUNGEN
+
+1. PRODUKTÜBERSICHT UND EINSATZGEBIETE
+
+1.1 Produktbeschreibung
+Die Wilo-Stratos MAXO ist eine hocheffiziente Umwälzpumpe mit EC-Motor und integrierter Regelung für moderne Heizungs-, Kälte- und Klimaanlagen. Die Pumpe vereint höchste Energieeffizienz mit intelligenter Regelungstechnik und digitaler Konnektivität.
+
+1.2 Einsatzgebiete
+- Heizungsanlagen nach DIN EN 12828
+- Kälteanlagen und Klimatechnik
+- Fernwärme- und Fernkältesysteme
+- Industrielle Kühl- und Heizsysteme
+- Wärmepumpenanlagen
+- Solarthermische Anlagen
+
+1.3 Hauptmerkmale
+- Energieeffizienzklasse A (nach EuP-Richtlinie)
+- EC-Motor mit bis zu 80% Wirkungsgrad
+- Integrierte Frequenzregelung
+- Dynamic Adapt plus Technologie
+- Multi-Flow-Adaptation (MFA)
+- Bluetooth- und WLAN-Konnektivität
+- Integrierte Hydraulik- und Systemdiagnose
+
+1.4 Baureihenübersicht
+- Stratos MAXO 25/0,5-9: Für Wohngebäude und kleine Gewerbe
+- Stratos MAXO 32/0,5-12: Für mittlere Wohn- und Gewerbegebäude  
+- Stratos MAXO 40/0,5-16: Für größere Gebäude und Anlagen
+- Stratos MAXO 50/0,5-18: Für industrielle Anwendungen
+- Stratos MAXO 65/0,5-18: Für große Industrieanlagen
+
+2. ENERGIEEFFIZIENZ UND UMWELTASPEKTE
+
+2.1 Energieeffizienz-Index (EEI)
+Die Stratos MAXO erfüllt die strengsten Anforderungen der EU-Ökodesign-Richtlinie:
+- EEI ≤ 0,20 (Energieeffizienzklasse A)
+- Bis zu 80% Energieeinsparung gegenüber ungeregelten Pumpen
+- Amortisation typically within 1-2 Jahre
+
+2.2 Umweltbewertung
+- CO₂-Reduktion durch hohen Wirkungsgrad
+- Materialien zu 95% recycelbar
+- Lange Lebensdauer reduziert Ressourcenverbrauch
+- REACH-konforme Materialien
+- RoHS-Konformität
+
+2.3 Energiekosten-Berechnung
+Beispielrechnung für Heizungsanlagen:
+
+Annahmen:
+- Laufzeit: 8.760 h/Jahr (kontinuierlicher Betrieb)
+- Strompreis: 0,30 €/kWh
+- Alte ungeregelte Pumpe: 150 W Leistungsaufnahme
+- Stratos MAXO: 35 W durchschnittliche Leistungsaufnahme
+
+Jährliche Energiekosten:
+- Alte Pumpe: 150 W × 8.760 h × 0,30 €/kWh = 394,20 €/Jahr
+- Stratos MAXO: 35 W × 8.760 h × 0,30 €/kWh = 91,98 €/Jahr
+- Einsparung: 302,22 €/Jahr
+
+3. HYDRAULISCHE AUSLEGUNG UND DIMENSIONIERUNG
+
+3.1 Grundlagen der Pumpenauslegung
+Für die korrekte Pumpenauslegung sind folgende Parameter erforderlich:
+- Volumenstrom Q [m³/h]
+- Förderhöhe H [m] 
+- Mediumtemperatur [°C]
+- Systemdruck [bar]
+- Anlagenkennlinie
+
+3.2 Bestimmung des Volumenstroms
+Heizungsanlagen:
+Q = Φ / (ρ × cp × ΔT)
+
+Wobei:
+- Q = Volumenstrom [m³/s]
+- Φ = Wärmeleistung [W]
+- ρ = Dichte des Mediums [kg/m³]
+- cp = spezifische Wärmekapazität [J/(kg·K)]
+- ΔT = Temperaturspreizung [K]
+
+Richtwerte für Temperaturspreizungen:
+- Radiatoren: ΔT = 20 K (70/50°C)
+- Fußbodenheizung: ΔT = 10 K (40/30°C)
+- Kühlung: ΔT = 5-7 K (6/12°C)
+
+3.3 Förderhöhenberechnung
+Die erforderliche Förderhöhe ergibt sich aus:
+H = ΔpAnlage / (ρ × g)
+
+Druckverluste berücksichtigen:
+- Rohrleitungen (abhängig von Länge, Durchmesser, Rauheit)
+- Armaturen (Ventile, Bögen, T-Stücke)
+- Wärmeübertrager
+- Regelventile
+
+3.4 Pumpenauswahl mit Wilo-Select
+Das Online-Auslegungsprogramm Wilo-Select unterstützt bei:
+- Hydraulischer Auslegung
+- Energieeffizienz-Bewertung
+- Wirtschaftlichkeitsberechnung
+- Produktauswahl und -konfiguration
+- Ausschreibungstexten und CAD-Daten
+
+4. TECHNISCHE SPEZIFIKATIONEN
+
+4.1 Leistungsdaten Stratos MAXO 32/0,5-12
+
+Anschlussleistung: 5-200 W (stufenlos regelbar)
+Fördermedium: Heizungswasser, Kühlwasser, Wasser-Glykol-Gemische
+Fördermediumtemperatur: -10°C bis +110°C
+Umgebungstemperatur: 0°C bis +40°C
+Max. Betriebsdruck: 10 bar
+Schutzart: IP X4D (nach DIN 40050-9)
+Isolierschale: EEI-konform, abnehmbar
+
+4.2 Hydraulische Kennwerte
+
+| Modell | Qmax [m³/h] | Hmax [m] | Anschluss |
+|--------|-------------|----------|-----------|
+| MAXO 25/0,5-9 | 4,5 | 9 | Rp 1" |
+| MAXO 32/0,5-12 | 9,0 | 12 | Rp 1¼" |
+| MAXO 40/0,5-16 | 15,0 | 16 | Rp 1½" |
+| MAXO 50/0,5-18 | 24,0 | 18 | Rp 2" |
+| MAXO 65/0,5-18 | 36,0 | 18 | Rp 2½" |
+
+4.3 Motor und Elektronik
+EC-Motor (electronically commutated):
+- Permanentmagnet-Synchronmotor
+- Integrierte Leistungselektronik
+- Wirkungsgrad bis 80%
+- Soft-Start-Funktion
+- Überlastungsschutz
+- Trockenlaufschutz
+
+4.4 Werkstoffe
+- Gehäuse: Gusseisen EN-GJL-200
+- Laufrad: Composite-Werkstoff (GF-PA)
+- Welle: Edelstahl 1.4104
+- Gleitlager: Kohle/Keramik, wartungsfrei
+- Dichtungen: EPDM, O-Ringe NBR
+
+5. INSTALLATION UND INBETRIEBNAHME
+
+5.1 Einbaulage und -bedingungen
+Standardeinbaulage:
+- Horizontale Rohrleitungen mit vertikaler Motorachse
+- Motorklemmenkasten oben (vor Spritzwasser geschützt)
+- Alternative Einbaulagen nach Rücksprache möglich
+
+Mindestabstände:
+- Zu Wänden: 300 mm (für Wartung)
+- Über Pumpe: 500 mm (für Demontage)
+- Vor/nach Pumpe: 5 × DN (für gleichmäßige Strömung)
+
+5.2 Rohrleitungsanschluss
+- Spanungsfreier Anschluss erforderlich
+- Ein- und Auslauf mit gleicher Nennweite
+- Absperrventile vor und nach der Pumpe vorsehen
+- Schmutzfänger vor der Pumpe empfohlen
+- Entlüftungseinrichtungen vorsehen
+
+5.3 Elektrischer Anschluss
+Netzanschluss:
+- Spannung: 1~230V ±10%, 50/60 Hz
+- Leistungsaufnahme: je nach Modell 5-200 W
+- Anschluss über bauseitige Steuerung oder direkt
+- Schutzleiter erforderlich
+
+Steuerungsanschluss:
+- 0-10V Analogsignal (Sollwertvorgabe)
+- PWM-Signal 20-100% (Drehzahlvorgabe)
+- Potentialfreie Kontakte für Betrieb/Störung
+- BACnet/Modbus für übergeordnete Systeme
+
+5.4 Erstinbetriebnahme
+1. Sichtprüfung
+   - Ordnungsgemäße Installation prüfen
+   - Rohrleitungsanschlüsse kontrollieren
+   - Elektrische Verbindungen prüfen
+
+2. Anlagenbefüllung
+   - Langsam befüllen und entlüften
+   - Betriebsdruck einstellen
+   - Wasserqualität nach VDI 2035 prüfen
+
+3. Pumpenkonfiguration
+   - Betriebsart wählen (konstantdruck, proportionaldruck, konstanter Volumenstrom)
+   - Sollwerte einstellen
+   - Grenzen definieren (Qmin, Qmax, Hmin, Hmax)
+
+4. Funktionstest
+   - Drehrichtung prüfen
+   - Kennlinie aufnehmen
+   - Energieaufnahme messen
+   - Geräuschentwicklung bewerten
+
+6. REGELUNG UND BETRIEBSARTEN
+
+6.1 Betriebsarten
+Die Stratos MAXO bietet verschiedene Regelungsarten:
+
+Konstantdruck (Δp-c):
+- Konstante Druckdifferenz über alle Volumenströme
+- Einsatz bei Anlagen mit variablen Volumenströmen
+- Typisch für Heizungsanlagen mit Thermostatventilen
+
+Proportionaldruck (Δp-v):  
+- Druckdifferenz reduziert sich proportional zum Volumenstrom
+- Energieoptimiert bei schwankenden Lasten
+- Empfohlen für moderne Regelungskonzepte
+
+Konstanter Volumenstrom (Q-const):
+- Konstanter Volumenstrom unabhängig vom Systemwiderstand
+- Einsatz bei konstanten Lasten
+- Typisch für Primärkreise und Kälteanlagen
+
+6.2 Dynamic Adapt Plus
+Automatische Anpassung der Pumpenkennlinie:
+- Selbstlernende Algorithmen
+- Erkennung von Systemveränderungen
+- Kontinuierliche Effizienzoptimierung
+- Reduziert Einregulierungsaufwand
+
+6.3 Multi-Flow-Adaptation (MFA)
+Intelligente Volumenstromanpassung:
+- Erkennung von Teillastbetrieb
+- Automatische Absenkung bei geringem Wärmebedarf
+- Bis zu 20% zusätzliche Energieeinsparung
+- Besonders effektiv in Wohngebäuden
+
+6.4 Parametrierung und Einstellung
+Über Wilo-Assistant App:
+- Bluetooth-Verbindung zur Pumpe
+- Intuitive Bedienführung
+- Echtzeitdaten und Diagnose
+- Parameterübertragung zwischen Pumpen
+- Serviceberichte und Dokumentation
+
+7. WARTUNG UND SERVICE
+
+7.1 Wartungsintervalle
+Regelmäßige Kontrollen:
+- Sichtprüfung: halbjährlich
+- Funktionskontrolle: jährlich
+- Vollwartung: alle 3-5 Jahre (je nach Betriebsbedingungen)
+
+7.2 Wartungsarbeiten
+Sichtprüfung:
+- Leckagestellen kontrollieren
+- Korrosion prüfen
+- Schwingungen und Geräusche bewerten
+- Display und Bedienelemente prüfen
+
+Funktionskontrolle:
+- Leistungsaufnahme messen
+- Förderdaten kontrollieren
+- Regelungsverhalten prüfen
+- Fehlerhistorie auswerten
+
+7.3 Störungsdiagnose
+Häufige Betriebsstörungen:
+
+Pumpe läuft nicht an:
+- Netzspannung prüfen
+- Sicherungen kontrollieren
+- Motorklemmen prüfen
+- Reset-Funktion ausführen
+
+Zu geringe Förderleistung:
+- Ansaugbereich prüfen (Kavitation)
+- Laufrad auf Verschmutzung kontrollieren
+- Systemwiderstände überprüfen
+- Einstellparameter kontrollieren
+
+Erhöhte Geräuschentwicklung:
+- Lagerung der Rohrleitungen prüfen
+- Kavitation ausschließen
+- Systemdruck kontrollieren
+- Pumpe entlüften
+
+7.4 Ersatzteile und Service
+Wichtige Ersatzteile:
+- Dichtungssatz
+- Laufrad
+- Motorelektronik
+- Gehäusedeckel
+- O-Ring-Sätze
+
+Wilo-Originalersatzteile garantieren:
+- Optimale Passgenauigkeit
+- Erhaltung der Effizienzklasse
+- Vollständige Funktionalität
+- Gewährleistungsschutz
+
+8. DIGITALE SERVICES UND CONNECTIVITY
+
+8.1 Wilo-Assistant App
+Mobile Applikation für Smartphones und Tablets:
+- Direkte Bluetooth-Verbindung zur Pumpe
+- Parametrierung und Inbetriebnahme
+- Live-Monitoring und Diagnose
+- Service-Reports und Dokumentation
+- Ersatzteil-Identifikation
+
+8.2 Wilo-Smart Connect
+Gebäudemanagement-Integration:
+- BACnet MS/TP und BACnet IP
+- Modbus RTU und Modbus TCP
+- KNX/EIB (über Gateway)
+- OPC UA für Industrie 4.0-Anwendungen
+
+8.3 Predictive Maintenance
+Vorausschauende Wartung durch:
+- Kontinuierliche Zustandsüberwachung
+- Trend-Analysen und Prognosen
+- Automatische Wartungsmeldungen
+- Optimierte Serviceplanung
+
+8.4 Energy Monitoring
+Energieverbrauchsüberwachung:
+- Realzeit-Energiedaten
+- Verbrauchstrends und -prognosen
+- Benchmarking und Optimierungsvorschläge
+- Nachhaltigkeitsberichte
+
+9. NORMEN UND ZERTIFIZIERUNGEN
+
+9.1 Europäische Normen
+- DIN EN 809: Pumpen und Pumpenaggregate für Flüssigkeiten
+- DIN EN 12828: Heizungsanlagen - Planung von Warmwasser-Heizungsanlagen
+- ErP-Richtlinie 2009/125/EG: Ökodesign-Anforderungen
+- CENELEC EN 60034-30-2: Wirkungsgrad-Klassen für Motoren
+
+9.2 Prüfungen und Zertifikate
+- CE-Kennzeichnung nach Maschinenrichtlinie
+- EAC-Zertifizierung für Russland/GUS
+- CCC-Zertifizierung für China
+- Energy Star Zertifizierung (USA)
+- WRAS-Zulassung (UK)
+
+9.3 Qualitätsmanagement
+- ISO 9001: Qualitätsmanagementsystem
+- ISO 14001: Umweltmanagementsystem
+- ISO 45001: Arbeitsschutzmanagementsystem
+- IQ-NET Zertifizierung
+
+9.4 Umwelt- und Sicherheitsstandards
+- RoHS-Konformität (Restriction of Hazardous Substances)
+- REACH-Verordnung (Registration, Evaluation, Authorisation of Chemicals)
+- WEEE-Richtlinie (Waste Electrical and Electronic Equipment)
+- EMV-Richtlinie 2014/30/EU
+
+TECHNISCHE UNTERSTÜTZUNG UND KONTAKT
+
+WILO SE
+Nortkirchenstraße 100
+44263 Dortmund
+Deutschland
+
+Technische Hotline: +49 231 4102-7000
+Service-Hotline: +49 231 4102-7500
+E-Mail: info@wilo.com
+Web: www.wilo.de
+
+Schulungszentrum Dortmund:
+Umfassende Weiterbildungsprogramme für Planer, Installateure und Betreiber
+Anmeldung unter: training@wilo.com
+
+© 2024 WILO SE. Alle Rechte vorbehalten.
+Technische Änderungen im Sinne des Fortschritts vorbehalten.
