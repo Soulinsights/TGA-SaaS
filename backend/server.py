@@ -177,7 +177,7 @@ async def init_database():
                 page_number INTEGER NOT NULL,
                 section_hierarchy VARCHAR,
                 content_hash VARCHAR NOT NULL,
-                embedding VECTOR(1536),
+                embedding VECTOR(3072),
                 created_at TIMESTAMPTZ DEFAULT NOW()
             )
         ''')
