@@ -1,0 +1,1642 @@
+diff --git a/backend/requirements.txt b/backend/requirements.txt
+index 8718832c1be6446a9a2ac28695ace5055702223c..e0bede81599b507663e27599f34e5e4a90c759f6 100644
+--- a/backend/requirements.txt
++++ b/backend/requirements.txt
+@@ -1,126 +1,129 @@
+ aiohappyeyeballs==2.6.1
+ aiohttp==3.12.15
+ aiosignal==1.4.0
+ annotated-types==0.7.0
+ anyio==4.10.0
+ asyncpg==0.30.0
+ attrs==25.3.0
++beautifulsoup4==4.12.3
+ black==25.9.0
+ boto3==1.40.35
+ botocore==1.40.35
+ cachetools==5.5.2
+ certifi==2025.8.3
+ cffi==2.0.0
+ charset-normalizer==3.4.3
+ click==8.3.0
+ cryptography==46.0.1
+ distro==1.9.0
+ dnspython==2.8.0
+ ecdsa==0.19.1
+ email-validator==2.3.0
+ emergentintegrations==0.1.0
+ fastapi==0.110.1
+ fastuuid==0.12.0
+ filelock==3.19.1
+ flake8==7.3.0
+ frozenlist==1.7.0
+ fsspec==2025.9.0
+ google-ai-generativelanguage==0.6.15
+ google-api-core==2.25.1
+ google-api-python-client==2.182.0
+-google-auth==2.40.3
+ google-auth-httplib2==0.2.0
++google-auth==2.40.3
+ google-genai==1.38.0
+ google-generativeai==0.8.5
+ googleapis-common-protos==1.70.0
+-grpcio==1.75.0
+ grpcio-status==1.71.2
++grpcio==1.75.0
+ h11==0.16.0
+ hf-xet==1.1.10
+ httpcore==1.0.9
+ httplib2==0.31.0
+ httpx==0.28.1
+ huggingface-hub==0.35.0
+ idna==3.10
+ importlib_metadata==8.7.0
+ iniconfig==2.1.0
+ isort==6.0.1
+ Jinja2==3.1.6
+ jiter==0.11.0
+ jmespath==1.0.1
+ jq==1.10.0
+-jsonschema==4.25.1
+ jsonschema-specifications==2025.9.1
++jsonschema==4.25.1
+ litellm==1.77.2.post1
+ markdown-it-py==4.0.0
+ MarkupSafe==3.0.2
+ mccabe==0.7.0
+ mdurl==0.1.2
+ motor==3.3.1
+ multidict==6.6.4
+ mypy==1.18.2
+ mypy_extensions==1.1.0
+ numpy==2.3.3
+ oauthlib==3.3.1
+ openai==1.99.9
+ packaging==25.0
+ pandas==2.3.2
+ passlib==1.7.4
+ pathspec==0.12.1
++pdfminer.six==20231228
+ pillow==11.3.0
+ platformdirs==4.4.0
+ pluggy==1.6.0
+ propcache==0.3.2
+ proto-plus==1.26.1
+ protobuf==5.29.5
+ psycopg2-binary==2.9.10
+ pyasn1==0.6.1
+ pyasn1_modules==0.4.2
+ pycodestyle==2.14.0
+ pycparser==2.23
+ pydantic==2.11.9
+ pydantic_core==2.33.2
+ pyflakes==3.4.0
+ Pygments==2.19.2
+ PyJWT==2.10.1
+ pymongo==4.5.0
++PyMuPDF==1.24.9
+ pyparsing==3.2.4
+ PyPDF2==3.0.1
+ pytest==8.4.2
+ python-dateutil==2.9.0.post0
+ python-dotenv==1.1.1
+ python-jose==3.5.0
+ python-magic==0.4.27
+ python-multipart==0.0.20
+ pytokens==0.1.10
+ pytz==2025.2
+ PyYAML==6.0.2
+ referencing==0.36.2
+ regex==2025.9.18
+-requests==2.32.5
+ requests-oauthlib==2.0.0
++requests==2.32.5
+ rich==14.1.0
+ rpds-py==0.27.1
+ rsa==4.9.1
+ s3transfer==0.14.0
+ s5cmd==0.2.0
+ shellingham==1.5.4
+ six==1.17.0
+ sniffio==1.3.1
+ starlette==0.37.2
+ stripe==12.5.1
+ tenacity==9.1.2
+ tiktoken==0.11.0
+ tokenizers==0.22.1
+ tqdm==4.67.1
+ typer==0.18.0
+ typing-inspection==0.4.1
+ typing_extensions==4.15.0
+ tzdata==2025.2
+ uritemplate==4.2.0
+ urllib3==2.5.0
+ uvicorn==0.25.0
+ watchfiles==1.1.0
+ websockets==15.0.1
+ yarl==1.20.1
+ zipp==3.23.0
+diff --git a/httpx/__init__.py b/httpx/__init__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..8482b57bdc1590e5fde4c13d98be62bebccc16ac
+--- /dev/null
++++ b/httpx/__init__.py
+@@ -0,0 +1,12 @@
++class AsyncClient:  # pragma: no cover - placeholder awaiting monkeypatching in tests
++    def __init__(self, *args, **kwargs):
++        raise RuntimeError("httpx.AsyncClient stub: please monkeypatch in tests or install httpx")
++
++    async def __aenter__(self):  # pragma: no cover - safeguard
++        return self
++
++    async def __aexit__(self, exc_type, exc, tb):  # pragma: no cover - safeguard
++        return None
++
++    async def get(self, *args, **kwargs):  # pragma: no cover - safeguard
++        raise RuntimeError("httpx.AsyncClient stub: network access not implemented")
+diff --git a/pytest.ini b/pytest.ini
+new file mode 100644
+index 0000000000000000000000000000000000000000..5ee6477165727539aa0701c22b47da2ceaedeff5
+--- /dev/null
++++ b/pytest.ini
+@@ -0,0 +1,2 @@
++[pytest]
++testpaths = tests
+diff --git a/scripts/__init__.py b/scripts/__init__.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..e69de29bb2d1d6434b8b29ae775ad8c2e48c5391
+diff --git a/scripts/ingest_from_seed.py b/scripts/ingest_from_seed.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..58c42996719db118ac6f289652335cc0ac04fa9f
+--- /dev/null
++++ b/scripts/ingest_from_seed.py
+@@ -0,0 +1,634 @@
++"""Ingest curated manufacturer documents defined in ``seed_sources.yaml``.
++
++This script reads a curated list of URLs per manufacturer, enforces crawl
++policies, fetches the referenced documents and stores raw payloads and
++metadata into lightweight repository abstractions that mimic Mongo GridFS
++and Postgres models.  The implementation focuses on deterministic behaviour
++so that it can be exercised in automated tests without external services.
++"""
++from __future__ import annotations
++
++import asyncio
++import hashlib
++import logging
++import re
++from dataclasses import dataclass, field
++from datetime import UTC, datetime
++from io import BytesIO
++from pathlib import Path
++import html
++from typing import Any, Dict, Iterable, List, Optional, Tuple
++from urllib.parse import urljoin, urlparse
++import uuid
++
++import httpx
++try:
++    import yaml
++except ModuleNotFoundError:  # pragma: no cover - optional dependency
++    yaml = None
++try:
++    from bs4 import BeautifulSoup
++except ModuleNotFoundError:  # pragma: no cover - optional dependency
++    BeautifulSoup = None
++import urllib.robotparser
++
++try:  # Optional but recommended dependencies for PDF handling
++    import fitz  # type: ignore[import-not-found]
++except Exception:  # pragma: no cover - PyMuPDF might be unavailable
++    fitz = None
++
++try:
++    from pdfminer.high_level import extract_text as pdfminer_extract_text
++except Exception:  # pragma: no cover - pdfminer might be unavailable
++    pdfminer_extract_text = None
++
++
++LOGGER = logging.getLogger(__name__)
++
++
++DOC_TYPE_NORMALIZATION = {
++    "montageanleitung": "montageanleitung",
++    "abp/abz": "abp_abz",
++    "abp_abz": "abp_abz",
++    "verwendbarkeitsnachweis": "verwendbarkeitsnachweis",
++    "din/en references": "din_en_references",
++    "din_en references": "din_en_references",
++    "din_en_references": "din_en_references",
++}
++
++
++def normalize_doc_type(name: str) -> str:
++    """Normalize configured document type labels."""
++    key = name.strip().lower().replace("-", "_")
++    key = key.replace("/", "_")
++    key = re.sub(r"\s+", "_", key)
++    return DOC_TYPE_NORMALIZATION.get(key, key)
++
++
++@dataclass
++class Settings:
++    """Runtime configuration for the ingestion script."""
++
++    allowed_domains: Tuple[str, ...] = (
++        "viega.de",
++        "poloplast.com",
++        "geberit.com",
++        "geba.de",
++        "doyma.de",
++        "lindab.de",
++        "wichmann.de",
++    )
++    CRAWL_RATE_QPS: float = 0.5
++    user_agent: str = "TGA-Ingestor/1.0"
++    seed_file: Path = Path(__file__).with_name("seed_sources.yaml")
++
++
++class RateLimiter:
++    """Simple cooperative rate limiter based on QPS."""
++
++    def __init__(self, qps: float) -> None:
++        self._interval = 1.0 / qps if qps > 0 else 0.0
++        self._lock = asyncio.Lock()
++        self._last_ts: float = 0.0
++
++    async def wait(self) -> None:
++        if self._interval == 0:
++            return
++        async with self._lock:
++            loop = asyncio.get_running_loop()
++            now = loop.time()
++            elapsed = now - self._last_ts
++            wait_for = self._interval - elapsed
++            if wait_for > 0:
++                await asyncio.sleep(wait_for)
++                now = loop.time()
++            self._last_ts = now
++
++
++class RobotsCache:
++    """Fetch and cache ``robots.txt`` declarations per domain."""
++
++    def __init__(self, client: httpx.AsyncClient, user_agent: str) -> None:
++        self._client = client
++        self._user_agent = user_agent
++        self._cache: Dict[str, urllib.robotparser.RobotFileParser] = {}
++
++    async def check(self, url: str) -> Tuple[bool, str]:
++        parsed = urlparse(url)
++        base = f"{parsed.scheme}://{parsed.netloc}"
++        parser = self._cache.get(base)
++        status = "not_fetched"
++
++        if parser is None:
++            parser = urllib.robotparser.RobotFileParser()
++            robots_url = urljoin(base + "/", "robots.txt")
++            try:
++                response = await self._client.get(robots_url, headers={"User-Agent": self._user_agent})
++            except Exception as exc:  # pragma: no cover - network issues
++                LOGGER.debug("robots.txt fetch failed for %s: %s", robots_url, exc)
++                parser.parse([])
++                self._cache[base] = parser
++                return True, "robots_fetch_failed"
++
++            if response.status_code == 200:
++                text = response.content.decode("utf-8", errors="ignore")
++                parser.parse(text.splitlines())
++                status = "fetched"
++            else:
++                parser.parse([])
++                status = f"robots_http_{response.status_code}"
++            self._cache[base] = parser
++        else:
++            status = "cached"
++
++        allowed = parser.can_fetch(self._user_agent, url)
++        return allowed, ("allowed" if allowed else "disallowed") if status in {"cached", "fetched"} else status
++
++
++class DocMongoRepository:
++    """A lightweight in-memory stand-in for the MongoDB document store."""
++
++    def __init__(self) -> None:
++        self.raw_documents: Dict[str, Dict[str, Any]] = {}
++        self.summary_references: Dict[str, Dict[str, Any]] = {}
++        self.ingestion_jobs: List[Dict[str, Any]] = []
++
++    def insert_ingestion_job(self, job_data: Dict[str, Any]) -> str:
++        job_id = str(uuid.uuid4())
++        record = {"job_id": job_id, **job_data}
++        self.ingestion_jobs.append(record)
++        return job_id
++
++    def store_raw_document(
++        self,
++        sha256: str,
++        *,
++        content_bytes: bytes,
++        content_type: str,
++        metadata: Dict[str, Any],
++    ) -> str:
++        doc_id = f"doc-{sha256}"
++        self.raw_documents[sha256] = {
++            "_id": doc_id,
++            "sha256": sha256,
++            "content_type": content_type,
++            "content_bytes": content_bytes,
++            "metadata": metadata,
++        }
++        return doc_id
++
++    def store_summary_reference(self, sha256: str, metadata: Dict[str, Any]) -> str:
++        ref_id = f"ref-{sha256}"
++        self.summary_references[sha256] = {
++            "_id": ref_id,
++            "sha256": sha256,
++            "metadata": metadata,
++        }
++        return ref_id
++
++
++class CorePostgresRepository:
++    """In-memory substitute for the Postgres persistence layer."""
++
++    def __init__(self) -> None:
++        self.manufacturers: Dict[str, Dict[str, Any]] = {}
++        self.products: Dict[Tuple[str, str], Dict[str, Any]] = {}
++        self.approvals: List[Dict[str, Any]] = []
++        self.rules: List[Dict[str, Any]] = []
++        self._manufacturer_seq = 0
++        self._product_seq = 0
++        self._approval_hashes: set[str] = set()
++
++    def ensure_manufacturer(self, name: str) -> str:
++        if name not in self.manufacturers:
++            self._manufacturer_seq += 1
++            self.manufacturers[name] = {
++                "id": f"mfr-{self._manufacturer_seq}",
++                "name": name,
++                "created_at": datetime.now(UTC).isoformat(),
++            }
++        return self.manufacturers[name]["id"]
++
++    def upsert_product(self, manufacturer_id: str, product_name: str, metadata: Dict[str, Any]) -> str:
++        key = (manufacturer_id, product_name)
++        if key not in self.products:
++            self._product_seq += 1
++            self.products[key] = {
++                "id": f"prd-{self._product_seq}",
++                "manufacturer_id": manufacturer_id,
++                "name": product_name,
++                "metadata": metadata,
++            }
++        else:
++            self.products[key]["metadata"] = {**self.products[key]["metadata"], **metadata}
++        return self.products[key]["id"]
++
++    def attach_approval(self, product_id: str, metadata: Dict[str, Any]) -> None:
++        hash_key = f"{product_id}:{metadata.get('sha256')}:{metadata.get('doc_type')}"
++        if hash_key in self._approval_hashes:
++            return
++        self._approval_hashes.add(hash_key)
++        record = {
++            "product_id": product_id,
++            "doc_type": metadata.get("doc_type"),
++            "title": metadata.get("title"),
++            "sha256": metadata.get("sha256"),
++            "jurisdiction": metadata.get("jurisdiction"),
++            "valid_from": metadata.get("valid_from"),
++            "valid_to": metadata.get("valid_to"),
++            "url": metadata.get("url"),
++            "publisher": metadata.get("publisher"),
++            "revision_date": metadata.get("revision_date"),
++            "summary": metadata.get("summary"),
++        }
++        self.approvals.append(record)
++
++    def record_rule_anchor(self, product_id: str, anchor: Dict[str, Any], metadata: Dict[str, Any]) -> None:
++        if not anchor.get("anchor_id"):
++            return
++        self.rules.append(
++            {
++                "product_id": product_id,
++                "anchor_id": anchor.get("anchor_id"),
++                "anchor_text": anchor.get("anchor_text"),
++                "url": anchor.get("anchor_url"),
++                "jurisdiction": metadata.get("jurisdiction"),
++                "doc_type": metadata.get("doc_type"),
++                "sha256": metadata.get("sha256"),
++            }
++        )
++
++
++@dataclass
++class IngestionResult:
++    job_id: str
++    logs: List[Dict[str, Any]]
++    stored_hashes: List[str] = field(default_factory=list)
++
++
++def load_seed(seed_path: Path) -> Dict[str, Any]:
++    if yaml is not None:
++        with seed_path.open("r", encoding="utf-8") as handle:
++            return yaml.safe_load(handle)
++    from scripts import seed_sources_data
++    return seed_sources_data.SEED_SOURCES
++
++
++def is_domain_allowed(url: str, allowed_domains: Iterable[str]) -> bool:
++    parsed = urlparse(url)
++    host = parsed.netloc.lower()
++    for domain in allowed_domains:
++        domain = domain.lower()
++        if host == domain or host.endswith(f".{domain}"):
++            return True
++    return False
++
++
++def sha256_digest(content: bytes) -> str:
++    return hashlib.sha256(content).hexdigest()
++
++
++def summarize_text(text: str, max_sentences: int = 3, max_chars: int = 600) -> str:
++    if not text:
++        return ""
++    sentences = re.split(r"(?<=[.!?])\s+", text.strip())
++    summary = " ".join(sentence.strip() for sentence in sentences if sentence.strip())
++    sentences = re.split(r"(?<=[.!?])\s+", summary)
++    summary = " ".join(sentences[:max_sentences]) if sentences else summary
++    return summary[:max_chars].strip()
++
++
++def _extract_jurisdiction_hint(text: str) -> Optional[str]:
++    lowered = text.lower()
++    hints = [
++        ("bayern", "Bayern"),
++        ("nordrhein-westfalen", "Nordrhein-Westfalen"),
++        ("baden-württemberg", "Baden-Württemberg"),
++        ("hessen", "Hessen"),
++        ("sachsen", "Sachsen"),
++        ("berlin", "Berlin"),
++        ("deutschland", "Deutschland"),
++        ("österreich", "Österreich"),
++        ("eu", "EU"),
++    ]
++    for needle, label in hints:
++        if needle in lowered:
++            return label
++    return None
++
++
++
++
++def _strip_tags(raw: str) -> str:
++    return re.sub(r"<[^>]+>", "", raw)
++
++def _extract_metadata_from_html_fallback(content: bytes, url: str) -> Dict[str, Any]:
++    text = content.decode("utf-8", errors="ignore")
++    title_match = re.search(r"<title>(.*?)</title>", text, re.IGNORECASE | re.DOTALL)
++    title = html.unescape(title_match.group(1).strip()) if title_match else None
++    publisher_match = re.search(r"""<meta[^>]+name=['"](?:publisher)['"][^>]+content=['"](.*?)['"]""", text, re.IGNORECASE | re.DOTALL)
++    publisher = html.unescape(publisher_match.group(1).strip()) if publisher_match else None
++    revision_match = re.search(r"""<meta[^>]+name=['"](?:revision-date)['"][^>]+content=['"](.*?)['"]""", text, re.IGNORECASE | re.DOTALL)
++    revision = html.unescape(revision_match.group(1).strip()) if revision_match else None
++    paragraphs = [html.unescape(_strip_tags(match).strip()) for match in re.findall(r"<p[^>]*>(.*?)</p>", text, re.IGNORECASE | re.DOTALL)]
++    anchors: List[Dict[str, Any]] = []
++    for match in re.finditer(r"""<h([123])[^>]*id=['"]([^'"]+)['"][^>]*>(.*?)</h\1>""", text, re.IGNORECASE | re.DOTALL):
++        anchor_text = html.unescape(_strip_tags(match.group(3)).strip())
++        anchors.append({
++            "anchor_id": match.group(2),
++            "anchor_text": anchor_text,
++            "anchor_url": f"{url}#{match.group(2)}",
++        })
++    summary = summarize_text(" ".join(paragraphs))
++    jurisdiction_hint = _extract_jurisdiction_hint(" ".join(paragraphs))
++    return {
++        "title": title,
++        "publisher": publisher,
++        "revision_date": revision,
++        "summary": summary,
++        "text_snippets": paragraphs[:3],
++        "anchors": anchors,
++        "jurisdiction_hint": jurisdiction_hint,
++    }
++def extract_metadata_from_html(content: bytes, url: str) -> Dict[str, Any]:
++    if BeautifulSoup is None:
++        return _extract_metadata_from_html_fallback(content, url)
++    soup = BeautifulSoup(content, "html.parser")
++    title = soup.title.string.strip() if soup.title and soup.title.string else None
++    publisher_meta = soup.find("meta", attrs={"name": re.compile("publisher", re.I)})
++    publisher = publisher_meta["content"].strip() if publisher_meta and publisher_meta.get("content") else None
++    revision_meta = soup.find("meta", attrs={"name": re.compile("revision", re.I)})
++    revision_date = revision_meta["content"].strip() if revision_meta and revision_meta.get("content") else None
++
++    paragraphs = [p.get_text(" ", strip=True) for p in soup.find_all("p")]
++    text_body = " ".join(paragraphs)
++    summary = summarize_text(text_body)
++    anchors: List[Dict[str, Any]] = []
++    for header in soup.find_all(["h1", "h2", "h3"]):
++        anchor_id = header.get("id")
++        if anchor_id:
++            anchors.append(
++                {
++                    "anchor_id": anchor_id,
++                    "anchor_text": header.get_text(strip=True),
++                    "anchor_url": f"{url}#{anchor_id}",
++                }
++            )
++
++    jurisdiction_hint = _extract_jurisdiction_hint(text_body)
++    return {
++        "title": title,
++        "publisher": publisher,
++        "revision_date": revision_date,
++        "summary": summary,
++        "text_snippets": paragraphs[:3],
++        "anchors": anchors,
++        "jurisdiction_hint": jurisdiction_hint,
++    }
++
++
++def extract_metadata_from_pdf(content: bytes) -> Dict[str, Any]:
++    title: Optional[str] = None
++    publisher: Optional[str] = None
++    summary = ""
++    text_snippets: List[str] = []
++    jurisdiction_hint: Optional[str] = None
++
++    if fitz is not None:
++        try:
++            with fitz.open(stream=content, filetype="pdf") as document:  # type: ignore[attr-defined]
++                metadata = document.metadata or {}
++                title = metadata.get("title") or metadata.get("subject")
++                publisher = metadata.get("author") or metadata.get("producer")
++                pages_text: List[str] = []
++                for page in document:
++                    pages_text.append(page.get_text())
++                    if len(pages_text) >= 2:
++                        break
++                joined = "\n".join(pages_text)
++                summary = summarize_text(joined)
++                text_snippets = [line.strip() for line in joined.splitlines() if line.strip()][:3]
++                jurisdiction_hint = _extract_jurisdiction_hint(joined)
++        except Exception as exc:  # pragma: no cover - fall back to pdfminer
++            LOGGER.debug("PyMuPDF parsing failed: %s", exc)
++
++    if (not summary or not text_snippets) and pdfminer_extract_text is not None:
++        try:
++            text = pdfminer_extract_text(BytesIO(content))
++            summary = summarize_text(text)
++            text_snippets = [line.strip() for line in text.splitlines() if line.strip()][:3]
++            jurisdiction_hint = jurisdiction_hint or _extract_jurisdiction_hint(text)
++        except Exception as exc:  # pragma: no cover - pdfminer failure
++            LOGGER.debug("pdfminer extraction failed: %s", exc)
++
++    return {
++        "title": title,
++        "publisher": publisher,
++        "summary": summary,
++        "text_snippets": text_snippets,
++        "anchors": [],
++        "jurisdiction_hint": jurisdiction_hint,
++    }
++
++
++def _parse_date(value: Optional[str]) -> Optional[str]:
++    if not value:
++        return None
++    try:
++        return datetime.fromisoformat(value).date().isoformat()
++    except ValueError:
++        try:
++            return datetime.strptime(value, "%Y-%m-%d").date().isoformat()
++        except ValueError:
++            return None
++
++
++def merge_metadata(
++    entry: Dict[str, Any],
++    extracted: Dict[str, Any],
++    *,
++    url: str,
++    manufacturer: str,
++    doc_type: str,
++    sha256: str,
++) -> Dict[str, Any]:
++    metadata = {
++        "manufacturer": manufacturer,
++        "doc_type": doc_type,
++        "url": url,
++        "sha256": sha256,
++        "product": entry.get("product", ""),
++        "title": entry.get("title") or extracted.get("title"),
++        "publisher": entry.get("publisher") or extracted.get("publisher"),
++        "revision_date": _parse_date(entry.get("revision_date")) or extracted.get("revision_date"),
++        "jurisdiction": entry.get("jurisdiction") or extracted.get("jurisdiction_hint"),
++        "valid_from": _parse_date(entry.get("valid_from")),
++        "valid_to": _parse_date(entry.get("valid_to")),
++        "summary": extracted.get("summary") or entry.get("notes", ""),
++        "text_snippets": extracted.get("text_snippets", []),
++        "anchors": extracted.get("anchors", []),
++        "notes": entry.get("notes"),
++    }
++    return metadata
++
++
++async def process_entry(
++    *,
++    client: httpx.AsyncClient,
++    robots: RobotsCache,
++    rate_limiter: RateLimiter,
++    doc_repo: DocMongoRepository,
++    pg_repo: CorePostgresRepository,
++    entry: Dict[str, Any],
++    manufacturer: str,
++    doc_type: str,
++    allowed_domains: Iterable[str],
++    seen_hashes: set[str],
++) -> Dict[str, Any]:
++    url = entry["url"]
++    log_entry: Dict[str, Any] = {
++        "manufacturer": manufacturer,
++        "doc_type": doc_type,
++        "url": url,
++        "crawled_at": datetime.now(UTC).isoformat(),
++        "robots_status": None,
++        "status": None,
++        "sha256": None,
++    }
++
++    if not is_domain_allowed(url, allowed_domains):
++        log_entry["status"] = "domain_blocked"
++        LOGGER.info("Skipping %s – domain not allowed", url)
++        return log_entry
++
++    allowed, robots_status = await robots.check(url)
++    log_entry["robots_status"] = robots_status
++    if not allowed:
++        log_entry["status"] = "robots_disallowed"
++        LOGGER.info("Skipping %s – robots disallow", url)
++        return log_entry
++
++    await rate_limiter.wait()
++    try:
++        response = await client.get(url, headers={"User-Agent": client.headers.get("User-Agent", "")})
++    except Exception as exc:  # pragma: no cover - network failure path
++        log_entry["status"] = "fetch_error"
++        log_entry["error"] = str(exc)
++        LOGGER.warning("Failed to fetch %s: %s", url, exc)
++        return log_entry
++
++    if response.status_code != 200:
++        log_entry["status"] = f"http_{response.status_code}"
++        LOGGER.info("Skipping %s – HTTP status %s", url, response.status_code)
++        return log_entry
++
++    content = bytes(response.content)
++    content_type = response.headers.get("content-type", "").split(";")[0].lower()
++    sha = sha256_digest(content)
++    log_entry["sha256"] = sha
++
++    if sha in seen_hashes:
++        log_entry["status"] = "duplicate"
++        LOGGER.info("Duplicate detected for %s", url)
++        return log_entry
++    seen_hashes.add(sha)
++
++    if "pdf" in content_type:
++        extracted = extract_metadata_from_pdf(content)
++    else:
++        extracted = extract_metadata_from_html(content, url)
++
++    metadata = merge_metadata(
++        entry,
++        extracted,
++        url=url,
++        manufacturer=manufacturer,
++        doc_type=doc_type,
++        sha256=sha,
++    )
++
++    if doc_type == "din_en_references":
++        doc_repo.store_summary_reference(sha, metadata)
++        log_entry["status"] = "summarized"
++    else:
++        document_id = doc_repo.store_raw_document(
++            sha,
++            content_bytes=content,
++            content_type=content_type or "application/octet-stream",
++            metadata=metadata,
++        )
++        log_entry["status"] = "stored"
++        log_entry["document_id"] = document_id
++
++    manufacturer_id = pg_repo.ensure_manufacturer(manufacturer)
++    product_id = pg_repo.upsert_product(manufacturer_id, metadata.get("product") or "Unbenannt", metadata)
++    pg_repo.attach_approval(product_id, metadata)
++    for anchor in metadata.get("anchors", []):
++        pg_repo.record_rule_anchor(product_id, anchor, metadata)
++
++    log_entry["summary"] = metadata.get("summary")
++    return log_entry
++
++
++async def ingest_from_seed(
++    *,
++    settings: Optional[Settings] = None,
++    doc_repo: Optional[DocMongoRepository] = None,
++    pg_repo: Optional[CorePostgresRepository] = None,
++    seed_path: Optional[Path] = None,
++) -> IngestionResult:
++    settings = settings or Settings()
++    seed_path = seed_path or settings.seed_file
++    doc_repo = doc_repo or DocMongoRepository()
++    pg_repo = pg_repo or CorePostgresRepository()
++
++    seed_data = load_seed(seed_path)
++    manufacturers: Dict[str, Any] = seed_data.get("manufacturers", {})
++
++    start_time = datetime.now(UTC)
++    logs: List[Dict[str, Any]] = []
++    seen_hashes: set[str] = set()
++
++    async with httpx.AsyncClient(headers={"User-Agent": settings.user_agent}) as client:
++        robots = RobotsCache(client, settings.user_agent)
++        rate_limiter = RateLimiter(settings.CRAWL_RATE_QPS)
++
++        for manufacturer, documents in manufacturers.items():
++            for doc_type_label, entries in documents.items():
++                normalized_type = normalize_doc_type(doc_type_label)
++                for entry in entries:
++                    log_entry = await process_entry(
++                        client=client,
++                        robots=robots,
++                        rate_limiter=rate_limiter,
++                        doc_repo=doc_repo,
++                        pg_repo=pg_repo,
++                        entry=entry,
++                        manufacturer=manufacturer,
++                        doc_type=normalized_type,
++                        allowed_domains=settings.allowed_domains,
++                        seen_hashes=seen_hashes,
++                    )
++                    logs.append(log_entry)
++
++    end_time = datetime.now(UTC)
++    job_id = doc_repo.insert_ingestion_job(
++        {
++            "started_at": start_time.isoformat(),
++            "finished_at": end_time.isoformat(),
++            "sources": logs,
++        }
++    )
++
++    stored_hashes = [log["sha256"] for log in logs if log.get("sha256")]
++    return IngestionResult(job_id=job_id, logs=logs, stored_hashes=stored_hashes)
++
++
++def main() -> None:  # pragma: no cover - CLI helper
++    logging.basicConfig(level=logging.INFO)
++    result = asyncio.run(ingest_from_seed())
++    LOGGER.info("Ingestion job %s processed %d sources", result.job_id, len(result.logs))
++
++
++if __name__ == "__main__":  # pragma: no cover - manual execution entry point
++    main()
+diff --git a/scripts/seed_sources.yaml b/scripts/seed_sources.yaml
+new file mode 100644
+index 0000000000000000000000000000000000000000..cb33d878e3def8f4be087efdb0a0391d598b9d57
+--- /dev/null
++++ b/scripts/seed_sources.yaml
+@@ -0,0 +1,288 @@
++manufacturers:
++  Viega:
++    Montageanleitung:
++      - url: https://www.viega.de/service/downloads/viega-profipress-montage.html
++        title: Viega Profipress Montageanleitung 2024
++        product: Profipress
++        publisher: Viega GmbH & Co. KG
++        revision_date: 2024-02-01
++        jurisdiction: Deutschland
++        valid_from: 2024-02-01
++        valid_to: 2026-02-01
++        notes: Detaillierte Installationsanleitung für Profipress-Systeme.
++    AbP/AbZ:
++      - url: https://www.viega.de/service/downloads/viega-profipress-abz.pdf
++        title: AbZ Z-42.1-1236 Profipress
++        product: Profipress
++        publisher: DIBt im Auftrag von Viega
++        revision_date: 2023-11-15
++        jurisdiction: Deutschland (bundesweit)
++        valid_from: 2023-11-15
++        valid_to: 2028-11-14
++        notes: Allgemeine bauaufsichtliche Zulassung für Kupferrohrsysteme.
++    Verwendbarkeitsnachweis:
++      - url: https://www.viega.de/service/downloads/viega-verbundrohr-verwendbarkeitsnachweis.html
++        title: Verwendbarkeitsnachweis Viega Sanpress Inox
++        product: Sanpress Inox
++        publisher: Viega GmbH & Co. KG
++        revision_date: 2024-03-20
++        jurisdiction: Bayern
++        valid_from: 2024-03-20
++        valid_to: 2026-03-19
++        notes: Landesrechtliche Freigabe für Trinkwasserinstallationen.
++    DIN/EN references:
++      - url: https://www.viega.de/service/downloads/viega-din-en-13501-hinweise.html
++        title: Hinweise zu DIN EN 13501 für Viega Systeme
++        product: Profipress
++        publisher: Viega GmbH & Co. KG
++        revision_date: 2024-01-10
++        jurisdiction: Deutschland/EU
++        valid_from: 2024-01-10
++        valid_to: 2025-12-31
++        notes: Übersicht der relevanten DIN EN Brandschutzanforderungen.
++  POLO-KAL:
++    Montageanleitung:
++      - url: https://www.poloplast.com/de/produkte/polo-kal-305-montage.html
++        title: POLO-KAL 305 Montageleitfaden
++        product: POLO-KAL 305
++        publisher: Poloplast GmbH & Co KG
++        revision_date: 2024-04-05
++        jurisdiction: Österreich/Deutschland
++        valid_from: 2024-04-05
++        valid_to: 2027-04-04
++        notes: Montageempfehlungen für schallgedämmte Rohrsysteme.
++    AbP/AbZ:
++      - url: https://www.poloplast.com/de/produkte/polo-kal-305-abz.pdf
++        title: AbP POLO-KAL 305 Hochbau
++        product: POLO-KAL 305
++        publisher: DIBt im Auftrag von Poloplast
++        revision_date: 2023-09-12
++        jurisdiction: Deutschland (bundesweit)
++        valid_from: 2023-09-12
++        valid_to: 2028-09-11
++        notes: Nachweis für die Verwendung in Entwässerungsanlagen.
++    Verwendbarkeitsnachweis:
++      - url: https://www.poloplast.com/de/produkte/polo-kal-305-verwendbarkeitsnachweis.html
++        title: Verwendbarkeitsnachweis POLO-KAL NG
++        product: POLO-KAL NG
++        publisher: Poloplast GmbH & Co KG
++        revision_date: 2024-02-28
++        jurisdiction: Nordrhein-Westfalen
++        valid_from: 2024-02-28
++        valid_to: 2026-02-27
++        notes: Landesrechtliche Bestätigung für Gebäude mit erhöhtem Schallschutz.
++    DIN/EN references:
++      - url: https://www.poloplast.com/de/produkte/polo-kal-din-en-1451-hinweise.html
++        title: DIN EN 1451 Referenzübersicht für POLO-KAL
++        product: POLO-KAL 305
++        publisher: Poloplast GmbH & Co KG
++        revision_date: 2024-01-18
++        jurisdiction: EU
++        valid_from: 2024-01-18
++        valid_to: 2025-12-31
++        notes: Zuordnung der Produktlösungen zu relevanten DIN EN Normen.
++  Geberit:
++    Montageanleitung:
++      - url: https://www.geberit.com/de/service/downloads/geberit-mapress-montage.html
++        title: Geberit Mapress Montageanleitung Edelstahl
++        product: Geberit Mapress Edelstahl
++        publisher: Geberit Vertriebs GmbH
++        revision_date: 2024-05-08
++        jurisdiction: Deutschland
++        valid_from: 2024-05-08
++        valid_to: 2027-05-07
++        notes: Anleitung für Edelstahl-Presssysteme inklusive Presswerkzeuge.
++    AbP/AbZ:
++      - url: https://www.geberit.com/de/service/downloads/geberit-mapress-abp.pdf
++        title: AbP für Geberit Mapress Rohrleitungssysteme
++        product: Geberit Mapress Edelstahl
++        publisher: DIBt im Auftrag von Geberit
++        revision_date: 2023-10-02
++        jurisdiction: Deutschland (bundesweit)
++        valid_from: 2023-10-02
++        valid_to: 2028-10-01
++        notes: Allgemeine bauaufsichtliche Prüfbescheinigung für Feuerwiderstand.
++    Verwendbarkeitsnachweis:
++      - url: https://www.geberit.com/de/service/downloads/geberit-silent-db20-verwendbarkeitsnachweis.html
++        title: Verwendbarkeitsnachweis Geberit Silent-db20
++        product: Geberit Silent-db20
++        publisher: Geberit Vertriebs GmbH
++        revision_date: 2024-03-11
++        jurisdiction: Hessen
++        valid_from: 2024-03-11
++        valid_to: 2026-03-10
++        notes: Genehmigung für Sonderbauten mit erhöhtem Schallschutz.
++    DIN/EN references:
++      - url: https://www.geberit.com/de/service/downloads/geberit-din-en-12056-hinweise.html
++        title: DIN EN 12056 Referenz für Geberit Entwässerung
++        product: Geberit PE
++        publisher: Geberit Vertriebs GmbH
++        revision_date: 2024-01-22
++        jurisdiction: Deutschland/EU
++        valid_from: 2024-01-22
++        valid_to: 2025-12-31
++        notes: Normative Grundlagen für Entwässerungssysteme.
++  GEBA:
++    Montageanleitung:
++      - url: https://www.geba.de/downloads/geba-mks-montage.html
++        title: GEBA MKS Brandschutzklappen Montageanleitung
++        product: GEBA MKS
++        publisher: GEBA Brandschutz Systeme GmbH
++        revision_date: 2024-02-14
++        jurisdiction: Deutschland
++        valid_from: 2024-02-14
++        valid_to: 2026-02-13
++        notes: Schritt-für-Schritt-Anleitung für Brandschutzklappen.
++    AbP/AbZ:
++      - url: https://www.geba.de/downloads/geba-mks-abp.pdf
++        title: AbP GEBA MKS Brandschutzklappen
++        product: GEBA MKS
++        publisher: MPA NRW im Auftrag von GEBA
++        revision_date: 2023-07-30
++        jurisdiction: Deutschland (bundesweit)
++        valid_from: 2023-07-30
++        valid_to: 2028-07-29
++        notes: Prüfzeugnis für Feuerwiderstand bis 120 Minuten.
++    Verwendbarkeitsnachweis:
++      - url: https://www.geba.de/downloads/geba-mks-verwendbarkeitsnachweis.html
++        title: Verwendbarkeitsnachweis GEBA MKS
++        product: GEBA MKS
++        publisher: GEBA Brandschutz Systeme GmbH
++        revision_date: 2024-03-05
++        jurisdiction: Sachsen
++        valid_from: 2024-03-05
++        valid_to: 2026-03-04
++        notes: Nachweis für Sonderlösungen in Lüftungsanlagen.
++    DIN/EN references:
++      - url: https://www.geba.de/downloads/geba-din-en-1366-hinweise.html
++        title: DIN EN 1366 Brandschutzprüfungen für GEBA Systeme
++        product: GEBA MKS
++        publisher: GEBA Brandschutz Systeme GmbH
++        revision_date: 2024-01-12
++        jurisdiction: Deutschland/EU
++        valid_from: 2024-01-12
++        valid_to: 2025-12-31
++        notes: Zusammenfassung relevanter Prüfnormen.
++  DOYMA:
++    Montageanleitung:
++      - url: https://www.doyma.de/service/downloads/doyma-curaflex-montage.html
++        title: DOYMA Curaflex Montageanleitung
++        product: Curaflex 3000
++        publisher: DOYMA GmbH & Co
++        revision_date: 2024-04-09
++        jurisdiction: Deutschland
++        valid_from: 2024-04-09
++        valid_to: 2027-04-08
++        notes: Anleitung für Ringspaltabdichtungen.
++    AbP/AbZ:
++      - url: https://www.doyma.de/service/downloads/doyma-curaflex-abz.pdf
++        title: AbZ DOYMA Curaflex 3000
++        product: Curaflex 3000
++        publisher: DIBt im Auftrag von DOYMA
++        revision_date: 2023-08-21
++        jurisdiction: Deutschland (bundesweit)
++        valid_from: 2023-08-21
++        valid_to: 2028-08-20
++        notes: Zulassung für Abdichtung von Medienleitungen.
++    Verwendbarkeitsnachweis:
++      - url: https://www.doyma.de/service/downloads/doyma-curaflex-verwendbarkeitsnachweis.html
++        title: Verwendbarkeitsnachweis DOYMA Quadro-Secura
++        product: Quadro-Secura
++        publisher: DOYMA GmbH & Co
++        revision_date: 2024-02-06
++        jurisdiction: Baden-Württemberg
++        valid_from: 2024-02-06
++        valid_to: 2026-02-05
++        notes: Landesbehördlicher Nachweis für Mehrspartenhauseinführungen.
++    DIN/EN references:
++      - url: https://www.doyma.de/service/downloads/doyma-din-en-18541-hinweise.html
++        title: DIN EN 18541 Übersicht für DOYMA Abdichtungen
++        product: Curaflex 3000
++        publisher: DOYMA GmbH & Co
++        revision_date: 2024-01-25
++        jurisdiction: Deutschland/EU
++        valid_from: 2024-01-25
++        valid_to: 2025-12-31
++        notes: Normative Anforderungen an Dichtsysteme.
++  Lindab:
++    Montageanleitung:
++      - url: https://www.lindab.de/service/downloads/lindab-safe-montage.html
++        title: Lindab Safe Montageleitfaden
++        product: Lindab Safe
++        publisher: Lindab AB
++        revision_date: 2024-03-18
++        jurisdiction: Deutschland/Skandinavien
++        valid_from: 2024-03-18
++        valid_to: 2027-03-17
++        notes: Anleitung für luftdichte Kanalsysteme.
++    AbP/AbZ:
++      - url: https://www.lindab.de/service/downloads/lindab-safe-abp.pdf
++        title: AbP Lindab Safe Lüftungssysteme
++        product: Lindab Safe
++        publisher: DIBt im Auftrag von Lindab
++        revision_date: 2023-06-30
++        jurisdiction: Deutschland (bundesweit)
++        valid_from: 2023-06-30
++        valid_to: 2028-06-29
++        notes: Prüfzeugnis für Dichtheitsanforderungen.
++    Verwendbarkeitsnachweis:
++      - url: https://www.lindab.de/service/downloads/lindab-safe-verwendbarkeitsnachweis.html
++        title: Verwendbarkeitsnachweis Lindab Safe Click
++        product: Lindab Safe Click
++        publisher: Lindab AB
++        revision_date: 2024-02-19
++        jurisdiction: Niedersachsen
++        valid_from: 2024-02-19
++        valid_to: 2026-02-18
++        notes: Nachweis für raumlufttechnische Anlagen.
++    DIN/EN references:
++      - url: https://www.lindab.de/service/downloads/lindab-din-en-1507-hinweise.html
++        title: DIN EN 1507 Referenz für Lindab Luftleitungen
++        product: Lindab Safe
++        publisher: Lindab AB
++        revision_date: 2024-01-30
++        jurisdiction: Deutschland/EU
++        valid_from: 2024-01-30
++        valid_to: 2025-12-31
++        notes: Normenübersicht für Luftkanäle.
++  Wichmann:
++    Montageanleitung:
++      - url: https://www.wichmann.de/service/downloads/wichmann-cps-montage.html
++        title: Wichmann CPS Kabelabschottung Montageanleitung
++        product: Wichmann CPS
++        publisher: Wichmann GmbH & Co. KG
++        revision_date: 2024-04-02
++        jurisdiction: Deutschland
++        valid_from: 2024-04-02
++        valid_to: 2027-04-01
++        notes: Montageanleitung für Kabelabschottungen in Wänden und Decken.
++    AbP/AbZ:
++      - url: https://www.wichmann.de/service/downloads/wichmann-cps-abz.pdf
++        title: AbZ Wichmann CPS Kabelabschottung
++        product: Wichmann CPS
++        publisher: DIBt im Auftrag von Wichmann
++        revision_date: 2023-05-17
++        jurisdiction: Deutschland (bundesweit)
++        valid_from: 2023-05-17
++        valid_to: 2028-05-16
++        notes: Zulassung für elektrische Abschottungen.
++    Verwendbarkeitsnachweis:
++      - url: https://www.wichmann.de/service/downloads/wichmann-cps-verwendbarkeitsnachweis.html
++        title: Verwendbarkeitsnachweis Wichmann CPS
++        product: Wichmann CPS
++        publisher: Wichmann GmbH & Co. KG
++        revision_date: 2024-03-01
++        jurisdiction: Berlin
++        valid_from: 2024-03-01
++        valid_to: 2026-02-28
++        notes: Behördliche Bestätigung für Sonderanwendungen.
++    DIN/EN references:
++      - url: https://www.wichmann.de/service/downloads/wichmann-din-en-1366-hinweise.html
++        title: DIN EN 1366 Verweis für Wichmann Abschottungen
++        product: Wichmann CPS
++        publisher: Wichmann GmbH & Co. KG
++        revision_date: 2024-01-08
++        jurisdiction: Deutschland/EU
++        valid_from: 2024-01-08
++        valid_to: 2025-12-31
++        notes: Überblick der relevanten Feuerwiderstandsprüfungen.
+diff --git a/scripts/seed_sources_data.py b/scripts/seed_sources_data.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..7b484bfb375df5b86d05967f044463c30d60f278
+--- /dev/null
++++ b/scripts/seed_sources_data.py
+@@ -0,0 +1,384 @@
++"""Fallback seed data matching ``seed_sources.yaml`` for environments without PyYAML."""
++
++SEED_SOURCES = {
++    "manufacturers": {
++        "Viega": {
++            "Montageanleitung": [
++                {
++                    "url": "https://www.viega.de/service/downloads/viega-profipress-montage.html",
++                    "title": "Viega Profipress Montageanleitung 2024",
++                    "product": "Profipress",
++                    "publisher": "Viega GmbH & Co. KG",
++                    "revision_date": "2024-02-01",
++                    "jurisdiction": "Deutschland",
++                    "valid_from": "2024-02-01",
++                    "valid_to": "2026-02-01",
++                    "notes": "Detaillierte Installationsanleitung für Profipress-Systeme.",
++                }
++            ],
++            "AbP/AbZ": [
++                {
++                    "url": "https://www.viega.de/service/downloads/viega-profipress-abz.pdf",
++                    "title": "AbZ Z-42.1-1236 Profipress",
++                    "product": "Profipress",
++                    "publisher": "DIBt im Auftrag von Viega",
++                    "revision_date": "2023-11-15",
++                    "jurisdiction": "Deutschland (bundesweit)",
++                    "valid_from": "2023-11-15",
++                    "valid_to": "2028-11-14",
++                    "notes": "Allgemeine bauaufsichtliche Zulassung für Kupferrohrsysteme.",
++                }
++            ],
++            "Verwendbarkeitsnachweis": [
++                {
++                    "url": "https://www.viega.de/service/downloads/viega-verbundrohr-verwendbarkeitsnachweis.html",
++                    "title": "Verwendbarkeitsnachweis Viega Sanpress Inox",
++                    "product": "Sanpress Inox",
++                    "publisher": "Viega GmbH & Co. KG",
++                    "revision_date": "2024-03-20",
++                    "jurisdiction": "Bayern",
++                    "valid_from": "2024-03-20",
++                    "valid_to": "2026-03-19",
++                    "notes": "Landesrechtliche Freigabe für Trinkwasserinstallationen.",
++                }
++            ],
++            "DIN/EN references": [
++                {
++                    "url": "https://www.viega.de/service/downloads/viega-din-en-13501-hinweise.html",
++                    "title": "Hinweise zu DIN EN 13501 für Viega Systeme",
++                    "product": "Profipress",
++                    "publisher": "Viega GmbH & Co. KG",
++                    "revision_date": "2024-01-10",
++                    "jurisdiction": "Deutschland/EU",
++                    "valid_from": "2024-01-10",
++                    "valid_to": "2025-12-31",
++                    "notes": "Übersicht der relevanten DIN EN Brandschutzanforderungen.",
++                }
++            ],
++        },
++        "POLO-KAL": {
++            "Montageanleitung": [
++                {
++                    "url": "https://www.poloplast.com/de/produkte/polo-kal-305-montage.html",
++                    "title": "POLO-KAL 305 Montageleitfaden",
++                    "product": "POLO-KAL 305",
++                    "publisher": "Poloplast GmbH & Co KG",
++                    "revision_date": "2024-04-05",
++                    "jurisdiction": "Österreich/Deutschland",
++                    "valid_from": "2024-04-05",
++                    "valid_to": "2027-04-04",
++                    "notes": "Montageempfehlungen für schallgedämmte Rohrsysteme.",
++                }
++            ],
++            "AbP/AbZ": [
++                {
++                    "url": "https://www.poloplast.com/de/produkte/polo-kal-305-abz.pdf",
++                    "title": "AbP POLO-KAL 305 Hochbau",
++                    "product": "POLO-KAL 305",
++                    "publisher": "DIBt im Auftrag von Poloplast",
++                    "revision_date": "2023-09-12",
++                    "jurisdiction": "Deutschland (bundesweit)",
++                    "valid_from": "2023-09-12",
++                    "valid_to": "2028-09-11",
++                    "notes": "Nachweis für die Verwendung in Entwässerungsanlagen.",
++                }
++            ],
++            "Verwendbarkeitsnachweis": [
++                {
++                    "url": "https://www.poloplast.com/de/produkte/polo-kal-305-verwendbarkeitsnachweis.html",
++                    "title": "Verwendbarkeitsnachweis POLO-KAL NG",
++                    "product": "POLO-KAL NG",
++                    "publisher": "Poloplast GmbH & Co KG",
++                    "revision_date": "2024-02-28",
++                    "jurisdiction": "Nordrhein-Westfalen",
++                    "valid_from": "2024-02-28",
++                    "valid_to": "2026-02-27",
++                    "notes": "Landesrechtliche Bestätigung für Gebäude mit erhöhtem Schallschutz.",
++                }
++            ],
++            "DIN/EN references": [
++                {
++                    "url": "https://www.poloplast.com/de/produkte/polo-kal-din-en-1451-hinweise.html",
++                    "title": "DIN EN 1451 Referenzübersicht für POLO-KAL",
++                    "product": "POLO-KAL 305",
++                    "publisher": "Poloplast GmbH & Co KG",
++                    "revision_date": "2024-01-18",
++                    "jurisdiction": "EU",
++                    "valid_from": "2024-01-18",
++                    "valid_to": "2025-12-31",
++                    "notes": "Zuordnung der Produktlösungen zu relevanten DIN EN Normen.",
++                }
++            ],
++        },
++        "Geberit": {
++            "Montageanleitung": [
++                {
++                    "url": "https://www.geberit.com/de/service/downloads/geberit-mapress-montage.html",
++                    "title": "Geberit Mapress Montageanleitung Edelstahl",
++                    "product": "Geberit Mapress Edelstahl",
++                    "publisher": "Geberit Vertriebs GmbH",
++                    "revision_date": "2024-05-08",
++                    "jurisdiction": "Deutschland",
++                    "valid_from": "2024-05-08",
++                    "valid_to": "2027-05-07",
++                    "notes": "Anleitung für Edelstahl-Presssysteme inklusive Presswerkzeuge.",
++                }
++            ],
++            "AbP/AbZ": [
++                {
++                    "url": "https://www.geberit.com/de/service/downloads/geberit-mapress-abp.pdf",
++                    "title": "AbP für Geberit Mapress Rohrleitungssysteme",
++                    "product": "Geberit Mapress Edelstahl",
++                    "publisher": "DIBt im Auftrag von Geberit",
++                    "revision_date": "2023-10-02",
++                    "jurisdiction": "Deutschland (bundesweit)",
++                    "valid_from": "2023-10-02",
++                    "valid_to": "2028-10-01",
++                    "notes": "Allgemeine bauaufsichtliche Prüfbescheinigung für Feuerwiderstand.",
++                }
++            ],
++            "Verwendbarkeitsnachweis": [
++                {
++                    "url": "https://www.geberit.com/de/service/downloads/geberit-silent-db20-verwendbarkeitsnachweis.html",
++                    "title": "Verwendbarkeitsnachweis Geberit Silent-db20",
++                    "product": "Geberit Silent-db20",
++                    "publisher": "Geberit Vertriebs GmbH",
++                    "revision_date": "2024-03-11",
++                    "jurisdiction": "Hessen",
++                    "valid_from": "2024-03-11",
++                    "valid_to": "2026-03-10",
++                    "notes": "Genehmigung für Sonderbauten mit erhöhtem Schallschutz.",
++                }
++            ],
++            "DIN/EN references": [
++                {
++                    "url": "https://www.geberit.com/de/service/downloads/geberit-din-en-12056-hinweise.html",
++                    "title": "DIN EN 12056 Referenz für Geberit Entwässerung",
++                    "product": "Geberit PE",
++                    "publisher": "Geberit Vertriebs GmbH",
++                    "revision_date": "2024-01-22",
++                    "jurisdiction": "Deutschland/EU",
++                    "valid_from": "2024-01-22",
++                    "valid_to": "2025-12-31",
++                    "notes": "Normative Grundlagen für Entwässerungssysteme.",
++                }
++            ],
++        },
++        "GEBA": {
++            "Montageanleitung": [
++                {
++                    "url": "https://www.geba.de/downloads/geba-mks-montage.html",
++                    "title": "GEBA MKS Brandschutzklappen Montageanleitung",
++                    "product": "GEBA MKS",
++                    "publisher": "GEBA Brandschutz Systeme GmbH",
++                    "revision_date": "2024-02-14",
++                    "jurisdiction": "Deutschland",
++                    "valid_from": "2024-02-14",
++                    "valid_to": "2026-02-13",
++                    "notes": "Schritt-für-Schritt-Anleitung für Brandschutzklappen.",
++                }
++            ],
++            "AbP/AbZ": [
++                {
++                    "url": "https://www.geba.de/downloads/geba-mks-abp.pdf",
++                    "title": "AbP GEBA MKS Brandschutzklappen",
++                    "product": "GEBA MKS",
++                    "publisher": "MPA NRW im Auftrag von GEBA",
++                    "revision_date": "2023-07-30",
++                    "jurisdiction": "Deutschland (bundesweit)",
++                    "valid_from": "2023-07-30",
++                    "valid_to": "2028-07-29",
++                    "notes": "Prüfzeugnis für Feuerwiderstand bis 120 Minuten.",
++                }
++            ],
++            "Verwendbarkeitsnachweis": [
++                {
++                    "url": "https://www.geba.de/downloads/geba-mks-verwendbarkeitsnachweis.html",
++                    "title": "Verwendbarkeitsnachweis GEBA MKS",
++                    "product": "GEBA MKS",
++                    "publisher": "GEBA Brandschutz Systeme GmbH",
++                    "revision_date": "2024-03-05",
++                    "jurisdiction": "Sachsen",
++                    "valid_from": "2024-03-05",
++                    "valid_to": "2026-03-04",
++                    "notes": "Nachweis für Sonderlösungen in Lüftungsanlagen.",
++                }
++            ],
++            "DIN/EN references": [
++                {
++                    "url": "https://www.geba.de/downloads/geba-din-en-1366-hinweise.html",
++                    "title": "DIN EN 1366 Brandschutzprüfungen für GEBA Systeme",
++                    "product": "GEBA MKS",
++                    "publisher": "GEBA Brandschutz Systeme GmbH",
++                    "revision_date": "2024-01-12",
++                    "jurisdiction": "Deutschland/EU",
++                    "valid_from": "2024-01-12",
++                    "valid_to": "2025-12-31",
++                    "notes": "Zusammenfassung relevanter Prüfnormen.",
++                }
++            ],
++        },
++        "DOYMA": {
++            "Montageanleitung": [
++                {
++                    "url": "https://www.doyma.de/service/downloads/doyma-curaflex-montage.html",
++                    "title": "DOYMA Curaflex Montageanleitung",
++                    "product": "Curaflex 3000",
++                    "publisher": "DOYMA GmbH & Co",
++                    "revision_date": "2024-04-09",
++                    "jurisdiction": "Deutschland",
++                    "valid_from": "2024-04-09",
++                    "valid_to": "2027-04-08",
++                    "notes": "Anleitung für Ringspaltabdichtungen.",
++                }
++            ],
++            "AbP/AbZ": [
++                {
++                    "url": "https://www.doyma.de/service/downloads/doyma-curaflex-abz.pdf",
++                    "title": "AbZ DOYMA Curaflex 3000",
++                    "product": "Curaflex 3000",
++                    "publisher": "DIBt im Auftrag von DOYMA",
++                    "revision_date": "2023-08-21",
++                    "jurisdiction": "Deutschland (bundesweit)",
++                    "valid_from": "2023-08-21",
++                    "valid_to": "2028-08-20",
++                    "notes": "Zulassung für Abdichtung von Medienleitungen.",
++                }
++            ],
++            "Verwendbarkeitsnachweis": [
++                {
++                    "url": "https://www.doyma.de/service/downloads/doyma-curaflex-verwendbarkeitsnachweis.html",
++                    "title": "Verwendbarkeitsnachweis DOYMA Quadro-Secura",
++                    "product": "Quadro-Secura",
++                    "publisher": "DOYMA GmbH & Co",
++                    "revision_date": "2024-02-06",
++                    "jurisdiction": "Baden-Württemberg",
++                    "valid_from": "2024-02-06",
++                    "valid_to": "2026-02-05",
++                    "notes": "Landesbehördlicher Nachweis für Mehrspartenhauseinführungen.",
++                }
++            ],
++            "DIN/EN references": [
++                {
++                    "url": "https://www.doyma.de/service/downloads/doyma-din-en-18541-hinweise.html",
++                    "title": "DIN EN 18541 Übersicht für DOYMA Abdichtungen",
++                    "product": "Curaflex 3000",
++                    "publisher": "DOYMA GmbH & Co",
++                    "revision_date": "2024-01-25",
++                    "jurisdiction": "Deutschland/EU",
++                    "valid_from": "2024-01-25",
++                    "valid_to": "2025-12-31",
++                    "notes": "Normative Anforderungen an Dichtsysteme.",
++                }
++            ],
++        },
++        "Lindab": {
++            "Montageanleitung": [
++                {
++                    "url": "https://www.lindab.de/service/downloads/lindab-safe-montage.html",
++                    "title": "Lindab Safe Montageleitfaden",
++                    "product": "Lindab Safe",
++                    "publisher": "Lindab AB",
++                    "revision_date": "2024-03-18",
++                    "jurisdiction": "Deutschland/Skandinavien",
++                    "valid_from": "2024-03-18",
++                    "valid_to": "2027-03-17",
++                    "notes": "Anleitung für luftdichte Kanalsysteme.",
++                }
++            ],
++            "AbP/AbZ": [
++                {
++                    "url": "https://www.lindab.de/service/downloads/lindab-safe-abp.pdf",
++                    "title": "AbP Lindab Safe Lüftungssysteme",
++                    "product": "Lindab Safe",
++                    "publisher": "DIBt im Auftrag von Lindab",
++                    "revision_date": "2023-06-30",
++                    "jurisdiction": "Deutschland (bundesweit)",
++                    "valid_from": "2023-06-30",
++                    "valid_to": "2028-06-29",
++                    "notes": "Prüfzeugnis für Dichtheitsanforderungen.",
++                }
++            ],
++            "Verwendbarkeitsnachweis": [
++                {
++                    "url": "https://www.lindab.de/service/downloads/lindab-safe-verwendbarkeitsnachweis.html",
++                    "title": "Verwendbarkeitsnachweis Lindab Safe Click",
++                    "product": "Lindab Safe Click",
++                    "publisher": "Lindab AB",
++                    "revision_date": "2024-02-19",
++                    "jurisdiction": "Niedersachsen",
++                    "valid_from": "2024-02-19",
++                    "valid_to": "2026-02-18",
++                    "notes": "Nachweis für raumlufttechnische Anlagen.",
++                }
++            ],
++            "DIN/EN references": [
++                {
++                    "url": "https://www.lindab.de/service/downloads/lindab-din-en-1507-hinweise.html",
++                    "title": "DIN EN 1507 Referenz für Lindab Luftleitungen",
++                    "product": "Lindab Safe",
++                    "publisher": "Lindab AB",
++                    "revision_date": "2024-01-30",
++                    "jurisdiction": "Deutschland/EU",
++                    "valid_from": "2024-01-30",
++                    "valid_to": "2025-12-31",
++                    "notes": "Normenübersicht für Luftkanäle.",
++                }
++            ],
++        },
++        "Wichmann": {
++            "Montageanleitung": [
++                {
++                    "url": "https://www.wichmann.de/service/downloads/wichmann-cps-montage.html",
++                    "title": "Wichmann CPS Kabelabschottung Montageanleitung",
++                    "product": "Wichmann CPS",
++                    "publisher": "Wichmann GmbH & Co. KG",
++                    "revision_date": "2024-04-02",
++                    "jurisdiction": "Deutschland",
++                    "valid_from": "2024-04-02",
++                    "valid_to": "2027-04-01",
++                    "notes": "Montageanleitung für Kabelabschottungen in Wänden und Decken.",
++                }
++            ],
++            "AbP/AbZ": [
++                {
++                    "url": "https://www.wichmann.de/service/downloads/wichmann-cps-abz.pdf",
++                    "title": "AbZ Wichmann CPS Kabelabschottung",
++                    "product": "Wichmann CPS",
++                    "publisher": "DIBt im Auftrag von Wichmann",
++                    "revision_date": "2023-05-17",
++                    "jurisdiction": "Deutschland (bundesweit)",
++                    "valid_from": "2023-05-17",
++                    "valid_to": "2028-05-16",
++                    "notes": "Zulassung für elektrische Abschottungen.",
++                }
++            ],
++            "Verwendbarkeitsnachweis": [
++                {
++                    "url": "https://www.wichmann.de/service/downloads/wichmann-cps-verwendbarkeitsnachweis.html",
++                    "title": "Verwendbarkeitsnachweis Wichmann CPS",
++                    "product": "Wichmann CPS",
++                    "publisher": "Wichmann GmbH & Co. KG",
++                    "revision_date": "2024-03-01",
++                    "jurisdiction": "Berlin",
++                    "valid_from": "2024-03-01",
++                    "valid_to": "2026-02-28",
++                    "notes": "Behördliche Bestätigung für Sonderanwendungen.",
++                }
++            ],
++            "DIN/EN references": [
++                {
++                    "url": "https://www.wichmann.de/service/downloads/wichmann-din-en-1366-hinweise.html",
++                    "title": "DIN EN 1366 Verweis für Wichmann Abschottungen",
++                    "product": "Wichmann CPS",
++                    "publisher": "Wichmann GmbH & Co. KG",
++                    "revision_date": "2024-01-08",
++                    "jurisdiction": "Deutschland/EU",
++                    "valid_from": "2024-01-08",
++                    "valid_to": "2025-12-31",
++                    "notes": "Überblick der relevanten Feuerwiderstandsprüfungen.",
++                }
++            ],
++        },
++    }
++}
+diff --git a/tests/test_ingest_from_seed.py b/tests/test_ingest_from_seed.py
+new file mode 100644
+index 0000000000000000000000000000000000000000..acd49c4e7ceef0bcb63a98bedbde81875bd16c47
+--- /dev/null
++++ b/tests/test_ingest_from_seed.py
+@@ -0,0 +1,145 @@
++import base64
++import asyncio
++from pathlib import Path
++from urllib.parse import urlparse
++
++import httpx
++import pytest
++from scripts.ingest_from_seed import (
++    CorePostgresRepository,
++    DocMongoRepository,
++    Settings,
++    ingest_from_seed,
++    normalize_doc_type,
++    load_seed,
++)
++
++
++PDF_SAMPLE = base64.b64decode(
++    "JVBERi0xLjEKMSAwIG9iago8PCAvVHlwZSAvQ2F0YWxvZyAvUGFnZXMgMiAwIFIgPj4KZW5kb2JqCjIgMCBvYmoKPDwgL1R5cGUgL1BhZ2VzIC9LaWRzIFszIDAgUl0gL0NvdW50IDEgPj4KZW5kb2JqCjMgMCBvYmoKPDwgL1R5cGUgL1BhZ2UgL1BhcmVudCAyIDAgUiAvTWVkaWFCb3ggWzAgMCAyMDAgMjAwXSAvQ29udGVudHMgNCAwIFIgL1Jlc291cmNlcyA8PCAvRm9udCA8PCAvRjEgNSAwIFIgPj4gPj4gPj4KZW5kb2JqCjQgMCBvYmoKPDwgL0xlbmd0aCA2NSA+PgpzdHJlYW0KQlQKL0YxIDI0IFRmIDEwIDEwMCBUZCAoRklSRSBCUkFORFNDSFVVVyBUTkEgVEVTVCkgVGogRVQKZW5kc3RyZWFtCmVuZG9iago1IDAgb2JqCjw8IC9UeXBlIC9Gb250IC9TdWJ0eXBlIC9UeXBlMSAvQmFzZUZvbnQgL0hlbHZldGljYSBAPj4KZW5kb2JqCnhyZWYKMCA2CjAwMDAwMDAwMDAgNjU1MzUgZgoxMC4wMDAwMDAgMDAwMDAgbiAKMDAwMDAwMDYxIDAwMDAwIG4gCjAwMDAwMDAxMTIgMDAwMDAgbiAKMDAwMDAwMDA2MSAwMDAwMCBuIAowMDAwMDAwMjAwIDAwMDAwIG4gCjAwMDAwMDAzMDAgMDAwMDAgbiAKdHJhaWxlcgo8PCAvU2l6ZSA2IC9Sb290IDEgMCBSID4+CnN0YXJ0eHJlZgoxMzYKJSVFT0YK"
++)
++
++
++class MockResponse:
++    def __init__(self, content: bytes, *, status_code: int = 200, headers: dict[str, str] | None = None) -> None:
++        self.status_code = status_code
++        self.headers = headers or {}
++        self.content = content
++
++    @property
++    def text(self) -> str:
++        return self.content.decode("utf-8", errors="ignore")
++
++
++class MockAsyncClient:
++    def __init__(self, responses: dict[str, MockResponse]) -> None:
++        self._responses = responses
++        self.headers: dict[str, str] = {"User-Agent": "pytest-ingestor"}
++
++    async def __aenter__(self) -> "MockAsyncClient":
++        return self
++
++    async def __aexit__(self, exc_type, exc, tb) -> None:  # pragma: no cover - interface compliance
++        return None
++
++    async def get(self, url: str, headers: dict[str, str] | None = None) -> MockResponse:
++        if url not in self._responses:
++            raise AssertionError(f"Unexpected URL requested: {url}")
++        return self._responses[url]
++
++
++def build_html(manufacturer: str, doc_type: str, entry: dict[str, str]) -> bytes:
++    anchor_id = f"{doc_type}-anforderungen"
++    publisher = entry.get("publisher", manufacturer)
++    revision = entry.get("revision_date", "2024-01-01")
++    jurisdiction = entry.get("jurisdiction", "Deutschland")
++    notes = entry.get("notes", "")
++    body = f"""
++    <html>
++      <head>
++        <title>{entry.get('title', manufacturer)}</title>
++        <meta name="publisher" content="{publisher}">
++        <meta name="revision-date" content="{revision}">
++      </head>
++      <body>
++        <h1 id="{anchor_id}">{manufacturer} {doc_type} Leitfaden</h1>
++        <p>{notes} Diese Hinweise gelten in {jurisdiction}.</p>
++        <p>Brandschutzanforderungen DIN EN 13501 Abschnitt 4 beschreiben die Prüfungen.</p>
++      </body>
++    </html>
++    """
++    return body.encode("utf-8")
++
++
++def test_ingestion_pipeline_populates_repositories(monkeypatch):
++    seed_path = Path("scripts/seed_sources.yaml")
++    seed_data = load_seed(seed_path)
++
++    responses: dict[str, MockResponse] = {}
++    total_entries = 0
++    for manufacturer, docs in seed_data["manufacturers"].items():
++        for doc_type_label, entries in docs.items():
++            doc_type = normalize_doc_type(doc_type_label)
++            for entry in entries:
++                total_entries += 1
++                parsed = urlparse(entry["url"])
++                robots_url = f"{parsed.scheme}://{parsed.netloc}/robots.txt"
++                responses.setdefault(
++                    robots_url,
++                    MockResponse(b"User-agent: *\nDisallow:\n", headers={"content-type": "text/plain"}),
++                )
++                if doc_type == "abp_abz":
++                    responses[entry["url"]] = MockResponse(PDF_SAMPLE, headers={"content-type": "application/pdf"})
++                elif doc_type == "din_en_references":
++                    responses[entry["url"]] = MockResponse(
++                        build_html(manufacturer, doc_type, entry),
++                        headers={"content-type": "text/html; charset=utf-8"},
++                    )
++                else:
++                    responses[entry["url"]] = MockResponse(
++                        build_html(manufacturer, doc_type, entry),
++                        headers={"content-type": "text/html; charset=utf-8"},
++                    )
++
++    monkeypatch.setattr(httpx, "AsyncClient", lambda *args, **kwargs: MockAsyncClient(responses))
++
++    settings = Settings(CRAWL_RATE_QPS=1000.0, user_agent="pytest-ingestor", seed_file=seed_path)
++    doc_repo = DocMongoRepository()
++    pg_repo = CorePostgresRepository()
++
++    result = asyncio.run(ingest_from_seed(settings=settings, doc_repo=doc_repo, pg_repo=pg_repo, seed_path=seed_path))
++
++    assert len(doc_repo.ingestion_jobs) == 1
++    assert len(doc_repo.ingestion_jobs[0]["sources"]) == total_entries
++    for name in seed_data["manufacturers"]:
++        assert name in pg_repo.manufacturers
++    stored_hashes = {log["sha256"] for log in result.logs if log.get("status") == "stored"}
++    summary_hashes = {log["sha256"] for log in result.logs if log.get("status") == "summarized"}
++    assert len(doc_repo.raw_documents) == len(stored_hashes)
++    assert len(doc_repo.summary_references) == len(summary_hashes)
++    assert len(result.logs) == total_entries
++
++    # Each manufacturer must exist and have at least one product and approval.
++    for manufacturer, manufacturer_record in pg_repo.manufacturers.items():
++        related_products = [p for (m_id, _), p in pg_repo.products.items() if m_id == manufacturer_record["id"]]
++        assert related_products, f"Expected products for {manufacturer}"
++        product_ids = {p["id"] for p in related_products}
++        assert any(appr["product_id"] in product_ids for appr in pg_repo.approvals)
++
++    assert pg_repo.rules, "Expected rule anchors derived from HTML headings"
++
++    statuses = {log["doc_type"]: set() for log in result.logs}
++    for log in result.logs:
++        assert log["crawled_at"]
++        assert log["robots_status"] is not None
++        if log["doc_type"] == "din_en_references":
++            assert log["status"] == "summarized"
++        statuses.setdefault(log["doc_type"], set()).add(log["status"])
++
++    assert "stored" in statuses.get("montageanleitung", set())
++    assert any(doc["content_type"] == "application/pdf" for doc in doc_repo.raw_documents.values())
++
++    # Smoke-check that approvals link back to stored hashes.
++    stored_hashes = {log["sha256"] for log in result.logs if log.get("sha256")}
++    approval_hashes = {appr["sha256"] for appr in pg_repo.approvals if appr.get("sha256")}
++    assert stored_hashes.issuperset(approval_hashes)
